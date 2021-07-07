@@ -1,4 +1,36 @@
 body {
-    color: red;
+    background-color: #fcfcfc;
+    color: #575757;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
+/* Nav Brand Styling */
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #575757;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+}
+
+/* Nav Link Styling */
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: #575757;
+    font-family: proxima-nova, sans-serif;
+    font-size: 1.2em;
+}
+
+/* Form */
+.card {
+    background-color: #fcfcfc;
+    color: #575757;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.card h3 {
+    text-align: center;
+}
