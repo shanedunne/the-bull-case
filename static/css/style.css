@@ -34,3 +34,14 @@ body {
 .card h3 {
     text-align: center;
 }
+
+.form-outline {
+    width: 60%;
+    margin: auto;
+}
+
+.register-button {
+    margin: auto;
+    background-color: #E2C391;
+}
+
