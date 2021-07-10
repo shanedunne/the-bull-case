@@ -6,6 +6,10 @@ body {
     font-weight: 300;
 }
 
+footer {
+    margin-bottom: 100px;
+}
+
 /* Nav Brand Styling */
 .navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
     color: #575757;
@@ -73,6 +77,9 @@ input {
     width: 100%
 }
 
+.article-data {
+    margin-top: 5px;
+}
 
 .author-left{
     display: block;
