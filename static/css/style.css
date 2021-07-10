@@ -48,3 +48,12 @@ body {
 input {
     background-color: #fafafa;
 }
+
+.not-reg-link {
+    color: #575757;
+    text-decoration: underline;
+}
+
+.not-reg-link:hover {
+    color: #141313;
+}
