@@ -36,7 +36,7 @@
                             <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Articles</a>
+                            <a class="nav-link active" aria-current="page" href="{{ url_for('articles') }}">Articles</a>
                         </li>
                         {% if session.user %}
                             <li class="nav-item">

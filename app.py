@@ -59,6 +59,7 @@ def register():
     return render_template("register.html")
 
 
+# Render login page
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -86,6 +87,7 @@ def login():
     return render_template("login.html")
 
 
+# Render profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -97,12 +99,27 @@ def profile(username):
 
     return redirect(url_for("login"))
 
+
+# Logout function
 @app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# Render articles page
+@app.route("/articles")
+def articles():
+    return render_template("articles.html")
+
+
+# Render article template
+@app.route("/article")
+def article():
+    return render_template("article.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

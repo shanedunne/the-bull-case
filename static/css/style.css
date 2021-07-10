@@ -57,3 +57,25 @@ input {
 .not-reg-link:hover {
     color: #141313;
 }
+
+/*------ article template -------*/
+
+.article-image {
+    width: 100%
+}
+
+
+.author-left{
+    display: block;
+    float:left;
+    width: 100px;
+    white-space: nowrap;
+    font-size: 21px;
+  }
+  
+  .published-date-right{
+    display: block;
+    float:right;
+    width: 100px;
+    white-space: nowrap;
+  }
