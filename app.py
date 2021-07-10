@@ -118,7 +118,8 @@ def articles():
 # Render article template
 @app.route("/article")
 def article():
-    return render_template("article.html")
+    articles = list(mongo.db.articles.find())
+    return render_template("articles.html")
 
 
 if __name__ == "__main__":

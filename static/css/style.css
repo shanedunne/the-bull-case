@@ -10,6 +10,14 @@ footer {
     margin-bottom: 100px;
 }
 
+.bg-image {
+    width: 100%;
+}
+
+.carousel-indicators {
+    margin-top: 200px;
+}
+
 /* Nav Brand Styling */
 .navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
     color: #575757;
