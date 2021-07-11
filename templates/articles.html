@@ -2,10 +2,17 @@
 
     {% block content %}
     <div class="row d-flex justify-content-center">
-      <img src="https://isg-one.com/images/default-source/default-album/blockchain-use-cases.tmb-th1190-446.jpg?sfvrsn=5fa4cc31_0" alt="">
+      <img src="https://isg-one.com/images/default-source/default-album/blockchain-use-cases.tmb-th1190-446.jpg?sfvrsn=5fa4cc31_0" alt="" class="big-img">
     </div>
-
-    <!-- Tabs navs -->
+    <div class="articles-header">
+      <h3>Learn and Share</h3>
+      <p>Navigate through our collection of community submitted articles or create your own by clicking the button below
+      </p>
+      <div class="article-header-button">
+        <a href="{{ url_for('post_article') }}" class="create-article">Post Article <i class="fas fa-plus"></i></a>
+      </div>
+    </div>
+        <!-- Tabs navs -->
 <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
     <li class="nav-item" role="presentation">
       <a

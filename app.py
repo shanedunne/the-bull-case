@@ -93,7 +93,7 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
         return render_template("profile.html", username=username)
 
@@ -110,17 +110,38 @@ def logout():
 
 
 # Render articles page
-@app.route("/articles")
-def articles():
+@app.route("/get_articles")
+def get_articles():
+    articles = list(mongo.db.articles.find())
     return render_template("articles.html")
 
 
 # Render article template
+"""
 @app.route("/article")
 def article():
     articles = list(mongo.db.articles.find())
     return render_template("articles.html")
+"""
 
+
+# Create new article
+@app.route("/post_article", methods=["GET", "POST"])
+def post_article():
+    if request.method == "POST":
+        article = {
+            "article_title": request.form.get("article_title"),
+            "article_topic": request.form.get("article_topic"),
+            "article_body": request.form.getlist("article_body"),
+            "article_author": session["user"]
+            # add timestamp
+        }
+        mongo.db.tasks.insert_one(task)
+        flash("Article posted")
+        return redirect(url_for("profile"))
+
+    topics = mongo.db.categories.find().sort("topic_name", 1)
+    return render_template("post-article.html", topics=topics)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

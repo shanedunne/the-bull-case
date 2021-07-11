@@ -14,9 +14,13 @@ footer {
     width: 100%;
 }
 
+
+
 .carousel-indicators {
     margin-top: 200px;
 }
+
+
 
 /* Nav Brand Styling */
 .navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
@@ -103,4 +107,30 @@ input {
     width: 100px;
     white-space: nowrap;
     margin-right: 30px;
+  }
+
+  /*---- Post Article-----*/
+
+  .articles-header {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.article-header-button {
+    padding-top: 10px;
+}
+
+  .create-article {
+    background-color: #f44336;
+    color: #fcfcfc;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  
+  .create-article:hover, .create-article:active {
+    background-color: red;
+    color: #fcfcfc;
   }
