@@ -138,10 +138,12 @@ def post_article():
             # add timestamp
         }
         mongo.db.articles.insert_one(article)
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
         flash("Article posted")
-        return redirect(url_for("profile"))
+        return redirect(url_for("profile", username=username))
 
-    topics = mongo.db.categories.find().sort("topic_name", 1)
+    topics = mongo.db.topics.find().sort("topic_name", 1)
     return render_template("post-article.html", topics=topics)
 
 if __name__ == "__main__":

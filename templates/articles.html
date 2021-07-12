@@ -110,25 +110,24 @@
     <div
       class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
 
-      
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img
-                    src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                    class="card-img-top"
-                    alt="..."
-                    />
-                    <div class="card-body">
-                        <p class="article-card-topic">Development</p>
-                        <h5 class="card-title">Article Title</h5>
-                    
-                    <a href="#" class="btn btn-primary">Button</a>
-                    </div>
-                </div>
+      {% if articles|length > 0 %}
+      {% for article in articles %}
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..." />
+
+            <div class="card-body">
+              <p class="article-card-topic">{{ articles.article_topic }}</p>
+              <h5 class="card-title">{{ articles.article_title }}</h5>
+
+              <a href="#" class="btn btn-primary">Button</a>
             </div>
+          </div>
         </div>
-        
+      </div>
+      {% endfor %}
+      {% endif %}
     </div>
     <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
       Tab 2 content

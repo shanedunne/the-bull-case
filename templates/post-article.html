@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row g-0 d-flex vertical-center justify-content-center">
         <form class="col-sm-12 col-md-12 col-lg-10" method="POST" action="{{ url_for('post_article') }}">
-            <div class="card">
+            <div class="card create-article-card">
                 <div class="card-body text-center">
                     <h3 class="card-title">Share With Us</h3>
                     <br>
@@ -16,7 +16,7 @@
                     <br>
                     <div class="form-outline">
                         <i class="fas fa-sort-down trailing"></i>
-                        <select id="article_topic" name="article_topic" class="form-control article-form" required>
+                        <select id="article_topic" name="article_topic" class="form-control article-form">
                             <option value="" disabled selected>Choose Topic</option>
                             {% for topic in topics %}
                                 <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
@@ -30,10 +30,11 @@
                     </div>
                     <br>
                     <div class="form-outline ">
-                        <textarea id="article_body" class="form-control article-form" name="article_body" rows="10"></textarea>
+                        <textarea id="article_body" class="form-control article-form" name="article_body" rows="10" required></textarea>
                         <label class="form-label" for="article_body">Type your thoughts...</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-rounded register-button">Register! <i
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Post Article <i
                             class="fas fa-sign-in-alt"></i></button>
                 </div>
             </div>
