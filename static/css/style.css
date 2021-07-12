@@ -23,7 +23,9 @@ footer {
 
 
 /* Nav Brand Styling */
-.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
     color: #575757;
     font-family: proxima-nova, sans-serif;
     font-style: normal;
@@ -32,7 +34,8 @@ footer {
 }
 
 /* Nav Link Styling */
-.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
     color: #575757;
     font-family: proxima-nova, sans-serif;
     font-size: 1.2em;
@@ -45,7 +48,13 @@ footer {
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 300;
+    
 }
+
+.reg-log-card {
+    margin-top: 70px;
+}
+
 
 .card h3 {
     text-align: center;
@@ -93,25 +102,25 @@ input {
     margin-top: 5px;
 }
 
-.author-left{
+.author-left {
     display: block;
-    float:left;
+    float: left;
     width: 100px;
     white-space: nowrap;
     font-size: 21px;
-  }
-  
-  .published-date-right{
+}
+
+.published-date-right {
     display: block;
-    float:right;
+    float: right;
     width: 100px;
     white-space: nowrap;
     margin-right: 30px;
-  }
+}
 
-  /*---- Post Article-----*/
+/*---- Post Article-----*/
 
-  .articles-header {
+.articles-header {
     text-align: center;
     padding-top: 10px;
 }
@@ -120,17 +129,32 @@ input {
     padding-top: 10px;
 }
 
-  .create-article {
-    background-color: #f44336;
+.create-article {
+    background-color: #FCBF49;
     color: #fcfcfc;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border-radius: 5px;
-  }
-  
-  .create-article:hover, .create-article:active {
-    background-color: red;
+}
+
+.create-article:hover,
+.create-article:active {
+    background-color: #F77F00;
     color: #fcfcfc;
-  }
+}
+
+.select-topic {
+    background-color: red;
+}
+
+.article-form {
+    color: red;
+    border: 5px solid red;
+}
+
+h1, h2, h3, h4, h5, h6, {
+    color: #003049;
+}
+

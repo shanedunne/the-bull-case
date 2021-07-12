@@ -132,11 +132,12 @@ def post_article():
         article = {
             "article_title": request.form.get("article_title"),
             "article_topic": request.form.get("article_topic"),
+            "article_coin": request.form.get("article_coin"),
             "article_body": request.form.getlist("article_body"),
             "article_author": session["user"]
             # add timestamp
         }
-        mongo.db.tasks.insert_one(task)
+        mongo.db.articles.insert_one(article)
         flash("Article posted")
         return redirect(url_for("profile"))
 
