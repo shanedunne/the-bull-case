@@ -113,7 +113,7 @@ def logout():
 @app.route("/get_articles")
 def get_articles():
     articles = list(mongo.db.articles.find())
-    return render_template("articles.html")
+    return render_template("articles.html", articles=articles)
 
 
 # Render article template
