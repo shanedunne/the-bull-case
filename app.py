@@ -117,12 +117,11 @@ def get_articles():
 
 
 # Render article template
-"""
-@app.route("/article")
-def article():
-    articles = list(mongo.db.articles.find())
-    return render_template("articles.html")
-"""
+@app.route("/view_article/<article_id>")
+def view_article(article_id):
+    article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
+    return render_template("article.html", article=article)
+
 
 
 # Create new article

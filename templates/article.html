@@ -2,25 +2,25 @@
 
     {% block content %}
 
-    {% for article in articles %}
+    
         
     <br>
     <br>
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-md-10">
-                <span class="article-topic">{{ articles.article_topic }}</span>
+                <span class="article-topic">{{ article.article_topic }}</span>
             </div>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 col-lg-10">
-                    <img src="https://blogs.iadb.org/caribbean-dev-trends/wp-content/uploads/sites/34/2017/12/Blockchain1.jpg" alt="" class="article-image">
+                    <img src="#" alt="" class="article-image">
             </div>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-8 col-lg-10 article-data">
-                <span class="author-left">{{ articles.article_author }}</span>
-                <span class="published-date-right">{{ articles.article_published_date }}</span>
+                <span class="author-left">{{ article.article_author }}</span>
+                <span class="published-date-right">{{ article.article_published_date }}</span>
             </div>
         </div>
         <br>
@@ -28,16 +28,16 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 col-lg-10">
                 <div class="article-title text-center">
-                    <h1>{{ articles.article_title }}</h1>
+                    <h1>{{ article.article_title }}</h1>
                 </div>
             </div>
         </div>
         <br>
         <div class="row d-flex justify-content-center">
             <div class="col-md-10">
-                <p>{{ articles.article_body }}</p>
+                <p>{{ article.article_body }}</p>
             </div>
         </div>
     </div>
-    {% endfor %}
+    
     {% endblock %}
