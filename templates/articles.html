@@ -117,12 +117,33 @@
         {% for article in articles %}
         <div class="col-md-4">
           <div class="card">
-            <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..." />
+            {% if article.article_topic == "Development" %}
+                <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+                {% elif article.article_topic == "Technicals" %}
+                <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+                {% elif article.article_topic == "Fundamentals" %}
+                <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+                {% elif article.article_topic == "News" %}
+                <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+                {% elif article.article_topic == "Other" %}
+                <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+                {% elif article.article_topic == "New Project" %}
+                <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
+                {% else %}
+                <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+                    id="article-image-card">
+                {% endif %}
             <div class="card-body">
               <p class="article-card-topic">{{ article.article_topic }}</p>
               <h5 class="card-title">{{ article.article_title }}</h5>
 
-              <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary">Button</a>
+              <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
             </div>
           </div>
           

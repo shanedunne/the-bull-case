@@ -9,12 +9,33 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-md-10">
-                <span class="article-topic">{{ article.article_topic }}</span>
+                <span class="article-topic" id="article-topic">{{ article.article_topic }}</span>
             </div>
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 col-lg-10">
-                    <img src="#" alt="" class="article-image">
+                {% if article.article_topic == "Development" %}
+                <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image"
+                    id="article-image">
+                {% elif article.article_topic == "Technicals" %}
+                <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image"
+                    id="article-image">
+                {% elif article.article_topic == "Fundamentals" %}
+                <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image"
+                    id="article-image">
+                {% elif article.article_topic == "News" %}
+                <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image"
+                    id="article-image">
+                {% elif article.article_topic == "Other" %}
+                <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image"
+                    id="article-image">
+                {% elif article.article_topic == "New Project" %}
+                <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image"
+                    id="article-image">
+                {% else %}
+                <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+                    id="article-image">
+                {% endif %}
             </div>
         </div>
         <div class="row d-flex justify-content-center">
