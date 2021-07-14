@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, h6, {
 
 }
 
-.delete-button:hover {
+.delete-button:hover, .delete-button:focus {
     background-color: #d62828ce;
     color: #fafafa;
 }
@@ -232,4 +232,27 @@ h1, h2, h3, h4, h5, h6, {
     .edit-delete-div {
         float: right;
     }
+}
+
+
+.yes-delete-button {
+    background-color: #D62828;
+    color: #fcfcfc;
+    transition: 0.3s;
+
+}
+
+.yes-delete-button:hover {
+    background-color: #d62828ce;
+    color: #fafafa;
+}
+
+.no-thanks-button {
+    background-color: #fcfcfc;
+    color: #575757;
+    transition: 0.3s;
+}
+
+.no-thanks-button:hover {
+    background-color:#f78000;
 }

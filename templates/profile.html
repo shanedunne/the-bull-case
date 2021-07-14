@@ -1,52 +1,72 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
-        <h1>{{ username }}'s Profile</h1>
-        <h3>Click to Read, Edit or Delete any of your articles here!</h3>
-        <div class="row">
-            {% for article in articles %}
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        {% if article.article_topic == "Development" %}
-                        <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
-                            id="article-image-card">
-                        {% elif article.article_topic == "Technicals" %}
-                        <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt=""
-                            class="article-image-card" id="article-image-card">
-                        {% elif article.article_topic == "Fundamentals" %}
-                        <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt=""
-                            class="article-image-card" id="article-image-card">
-                        {% elif article.article_topic == "News" %}
-                        <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
-                            id="article-image-card">
-                        {% elif article.article_topic == "Other" %}
-                        <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
-                            id="article-image-card">
-                        {% elif article.article_topic == "New Projects" %}
-                        <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt=""
-                            class="article-image-card" id="article-image-card">
-                        {% else %}
-                        <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt=""
-                            class="article-image-card" id="article-image-card">
-                        {% endif %}
-                        <div class="card-body">
-                            <p class="article-card-topic">{{ article.article_topic }}</p>
-                            <h5 class="card-title">{{ article.article_title }}</h5>
 
-                            <a href="{{ url_for('view_article', article_id=article._id) }}"
-                                class="btn btn-primary read-button">Read</a>
-                            <div class="edit-delete-div">
-                                <a href="{{ url_for('edit_article', article_id=article._id) }}"
-                                    class="btn btn-primary edit-button">Edit</a>
-                                <a href="{{ url_for('view_article', article_id=article._id) }}"
-                                    class="btn btn-primary delete-button">Delete</a>
+<h1>{{ username }}'s Profile</h1>
+<h3>Click to Read, Edit or Delete any of your articles here!</h3>
+<div class="row">
+    {% for article in articles %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card">
+            {% if article.article_topic == "Development" %}
+            <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+            {% elif article.article_topic == "Technicals" %}
+            <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+            {% elif article.article_topic == "Fundamentals" %}
+            <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+            {% elif article.article_topic == "News" %}
+            <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+            {% elif article.article_topic == "Other" %}
+            <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
+            {% else %}
+            <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+                id="article-image-card">
+            {% endif %}
+            <div class="card-body">
+                <p class="article-card-topic">{{ article.article_topic }}</p>
+                <h5 class="card-title">{{ article.article_title }}</h5>
+
+                <a href="{{ url_for('view_article', article_id=article._id) }}"
+                    class="btn btn-primary read-button">Read</a>
+                <div class="edit-delete-div">
+                    <a href="{{ url_for('edit_article', article_id=article._id) }}"
+                        class="btn btn-primary edit-button">Edit</a>
+                    <a href="#" class="btn btn-primary delete-button" data-mdb-toggle="modal"
+                        data-mdb-target="#deleteModal">Delete</a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Are You Sure You Want To Delete This Article:</h5>
+                                <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">{{ article.article_title }}</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary no-thanks-button" data-mdb-dismiss="modal">
+                                    No thanks
+                                </button>
+                                <button type="button" class="btn btn-primary yes-delete-button">Yes, Delete</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
         </div>
-    
+    </div>
+    {% endfor %}
+</div>
+
 
 {% endblock %}
