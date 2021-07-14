@@ -134,7 +134,7 @@ def post_article():
             "article_title": request.form.get("article_title"),
             "article_topic": request.form.get("article_topic"),
             "article_coin": request.form.get("article_coin"),
-            "article_body": request.form.getlist("article_body"),
+            "article_body": request.form.get("article_body"),
             "article_author": session["user"]
             # add timestamp
         }
