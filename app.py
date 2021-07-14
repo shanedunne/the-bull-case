@@ -93,9 +93,12 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    articles = list(mongo.db.articles.find(
+        {"article_author": username}))
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, articles=articles)
 
     return redirect(url_for("login"))
 
@@ -144,6 +147,25 @@ def post_article():
 
     topics = mongo.db.topics.find().sort("topic_name", 1)
     return render_template("post-article.html", topics=topics)
+
+# Edit Task
+@app.route("/edit_article/article_id", methods=["GET", "POST"])
+def edit_article(article_id):
+    if request.method == "POST":
+        article = {
+            "article_title": request.form.get("article_title"),
+            "article_topic": request.form.get("article_topic"),
+            "article_coin": request.form.get("article_coin"),
+            "article_body": request.form.getlist("article_body"),
+            "article_author": session["user"]
+            # add timestamp
+        }
+        mongo.db.articles.update({"_id": ObjectId(task_id)}, article)
+        flash("Article Updated")
+
+    article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
+    topics = mongo.db.topics.find().sort("topic_name", 1)
+    return render_template("profile.html", article=article, topics=topics)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
