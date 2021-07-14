@@ -1,178 +1,351 @@
 {% extends "base.html" %}
 
-    {% block content %}
-    <div class="row d-flex justify-content-center">
-      <img src="https://isg-one.com/images/default-source/default-album/blockchain-use-cases.tmb-th1190-446.jpg?sfvrsn=5fa4cc31_0" alt="" class="big-img">
-    </div>
-    <div class="articles-header">
-      <h1>Community Articles</h1>
-      <p>Navigate through our collection of community submitted articles or create your own by clicking the button below
-      </p>
-      <div class="article-header-button">
-        <a href="{{ url_for('post_article') }}" class="create-article">Post Article <i class="fas fa-plus"></i></a>
-      </div>
-      <br>
-    </div>
-
-    
-        <!-- Tabs navs -->
-<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link active"
-        id="ex1-tab-1"
-        data-mdb-toggle="tab"
-        href="#ex1-tabs-1"
-        role="tab"
-        aria-controls="ex1-tabs-1"
-        aria-selected="true"
-        >All</a
-      >
-    </li>
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        id="ex1-tab-2"
-        data-mdb-toggle="tab"
-        href="#ex1-tabs-2"
-        role="tab"
-        aria-controls="ex1-tabs-2"
-        aria-selected="false"
-        >Development</a
-      >
-    </li>
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        id="ex1-tab-3"
-        data-mdb-toggle="tab"
-        href="#ex1-tabs-3"
-        role="tab"
-        aria-controls="ex1-tabs-3"
-        aria-selected="false"
-        >Fundamentals</a
-      >
-    </li>
-    
-    <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          id="ex1-tab-4"
-          data-mdb-toggle="tab"
-          href="#ex1-tabs-4"
-          role="tab"
-          aria-controls="ex1-tabs-4"
-          aria-selected="false"
-          >Technicals</a
-        >
-      </li>
-      
-    <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          id="ex1-tab-5"
-          data-mdb-toggle="tab"
-          href="#ex1-tabs-5"
-          role="tab"
-          aria-controls="ex1-tabs-5"
-          aria-selected="false"
-          >New Project</a
-        >
-      </li>
-      
-    <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          id="ex1-tab-6"
-          data-mdb-toggle="tab"
-          href="#ex1-tabs-6"
-          role="tab"
-          aria-controls="ex1-tabs-6"
-          aria-selected="false"
-          >News</a
-        >
-      </li>
-      <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          id="ex1-tab-7"
-          data-mdb-toggle="tab"
-          href="#ex1-tabs-7"
-          role="tab"
-          aria-controls="ex1-tabs-7"
-          aria-selected="false"
-          >Other</a
-        >
-      </li>
-  </ul>
-  <!-- Tabs navs -->
-  
-  <!-- Tabs content -->
-  <div class="tab-content" id="ex1-content">
-    <div
-      class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
-
-      
-      <div class="row">
-        {% for article in articles %}
-        <div class="col-md-4">
-          <div class="card">
-            {% if article.article_topic == "Development" %}
-                <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
-                id="article-image-card">
-                {% elif article.article_topic == "Technicals" %}
-                <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
-                id="article-image-card">
-                {% elif article.article_topic == "Fundamentals" %}
-                <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
-                id="article-image-card">
-                {% elif article.article_topic == "News" %}
-                <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
-                id="article-image-card">
-                {% elif article.article_topic == "Other" %}
-                <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
-                id="article-image-card">
-                {% elif article.article_topic == "New Project" %}
-                <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
-                id="article-image-card">
-                {% else %}
-                <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
-                    id="article-image-card">
-                {% endif %}
-            <div class="card-body">
-              <p class="article-card-topic">{{ article.article_topic }}</p>
-              <h5 class="card-title">{{ article.article_title }}</h5>
-
-              <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
-            </div>
-          </div>
-          
-        </div>
-        {% endfor %}
-      </div>
-      
-    </div>
-    <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-      Tab 2 content
-    </div>
-    <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-      Tab 3 content
-    </div>
-    <div class="tab-pane fade" id="ex1-tabs-4" role="tabpanel" aria-labelledby="ex1-tab-4">
-        Tab 3 content
-    </div>
-    <div class="tab-pane fade" id="ex1-tabs-5" role="tabpanel" aria-labelledby="ex1-tab-5">
-        Tab 3 content
-    </div>
-    <div class="tab-pane fade" id="ex1-tabs-6" role="tabpanel" aria-labelledby="ex1-tab-6">
-        Tab 3 content
-      </div>
-      <div class="tab-pane fade" id="ex1-tabs-7" role="tabpanel" aria-labelledby="ex1-tab-7">
-        Tab 3 content
-      </div>
+{% block content %}
+<div class="row d-flex justify-content-center">
+  <img
+    src="https://isg-one.com/images/default-source/default-album/blockchain-use-cases.tmb-th1190-446.jpg?sfvrsn=5fa4cc31_0"
+    alt="" class="big-img">
+</div>
+<div class="articles-header">
+  <h1>Community Articles</h1>
+  <p>Navigate through our collection of community submitted articles or create your own by clicking the button below
+  </p>
+  <div class="article-header-button">
+    <a href="{{ url_for('post_article') }}" class="create-article">Post Article <i class="fas fa-plus"></i></a>
   </div>
-  <!-- Tabs content -->
+  <br>
+</div>
 
-    
 
-    {% endblock %}
+<!-- Tabs navs -->
+<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab"
+      aria-controls="ex1-tabs-1" aria-selected="true">All</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab" aria-controls="ex1-tabs-2"
+      aria-selected="false">Development</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ex1-tab-3" data-mdb-toggle="tab" href="#ex1-tabs-3" role="tab" aria-controls="ex1-tabs-3"
+      aria-selected="false">Fundamentals</a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ex1-tab-4" data-mdb-toggle="tab" href="#ex1-tabs-4" role="tab" aria-controls="ex1-tabs-4"
+      aria-selected="false">Technicals</a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ex1-tab-5" data-mdb-toggle="tab" href="#ex1-tabs-5" role="tab" aria-controls="ex1-tabs-5"
+      aria-selected="false">New Project</a>
+  </li>
+
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ex1-tab-6" data-mdb-toggle="tab" href="#ex1-tabs-6" role="tab" aria-controls="ex1-tabs-6"
+      aria-selected="false">News</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ex1-tab-7" data-mdb-toggle="tab" href="#ex1-tabs-7" role="tab" aria-controls="ex1-tabs-7"
+      aria-selected="false">Other</a>
+  </li>
+</ul>
+<!-- Tabs navs -->
+
+<!-- Tabs content -->
+<div class="tab-content" id="ex1-content">
+  <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+
+
+    <div class="row">
+      {% for article in articles %}
+      <div class="col-md-4">
+        <div class="card">
+          {% if article.article_topic == "Development" %}
+          <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Technicals" %}
+          <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Fundamentals" %}
+          <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "News" %}
+          <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Other" %}
+          <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "New Project" %}
+          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% else %}
+          <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% endif %}
+          <div class="card-body">
+            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <h5 class="card-title">{{ article.article_title }}</h5>
+
+            <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+  <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+    <div class="row">
+      {% for article in articles %}
+      {% if article.article_topic == "Development" %}
+      <div class="col-md-4">
+        <div class="card">
+          {% if article.article_topic == "Development" %}
+          <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Technicals" %}
+          <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Fundamentals" %}
+          <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "News" %}
+          <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Other" %}
+          <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "New Project" %}
+          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% else %}
+          <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% endif %}
+          <div class="card-body">
+            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <h5 class="card-title">{{ article.article_title }}</h5>
+
+            <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+    <div class="row">
+      {% for article in articles %}
+      {% if article.article_topic == "Fundamentals" %}
+      <div class="col-md-4">
+        <div class="card">
+          {% if article.article_topic == "Development" %}
+          <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Technicals" %}
+          <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Fundamentals" %}
+          <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "News" %}
+          <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Other" %}
+          <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "New Project" %}
+          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% else %}
+          <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% endif %}
+          <div class="card-body">
+            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <h5 class="card-title">{{ article.article_title }}</h5>
+
+            <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="ex1-tabs-4" role="tabpanel" aria-labelledby="ex1-tab-4">
+    <div class="row">
+      {% for article in articles %}
+      {% if article.article_topic == "Technicals" %}
+      <div class="col-md-4">
+        <div class="card">
+          {% if article.article_topic == "Development" %}
+          <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Technicals" %}
+          <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Fundamentals" %}
+          <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "News" %}
+          <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Other" %}
+          <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "New Project" %}
+          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% else %}
+          <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% endif %}
+          <div class="card-body">
+            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <h5 class="card-title">{{ article.article_title }}</h5>
+
+            <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="ex1-tabs-5" role="tabpanel" aria-labelledby="ex1-tab-5">
+    <div class="row">
+      {% for article in articles %}
+      {% if article.article_topic == "New Project" %}
+      <div class="col-md-4">
+        <div class="card">
+          {% if article.article_topic == "Development" %}
+          <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Technicals" %}
+          <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Fundamentals" %}
+          <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "News" %}
+          <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Other" %}
+          <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "New Project" %}
+          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% else %}
+          <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% endif %}
+          <div class="card-body">
+            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <h5 class="card-title">{{ article.article_title }}</h5>
+
+            <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="ex1-tabs-6" role="tabpanel" aria-labelledby="ex1-tab-6">
+    <div class="row">
+      {% for article in articles %}
+      {% if article.article_topic == "News" %}
+      <div class="col-md-4">
+        <div class="card">
+          {% if article.article_topic == "Development" %}
+          <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Technicals" %}
+          <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Fundamentals" %}
+          <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "News" %}
+          <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Other" %}
+          <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "New Project" %}
+          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% else %}
+          <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% endif %}
+          <div class="card-body">
+            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <h5 class="card-title">{{ article.article_title }}</h5>
+
+            <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-pane fade" id="ex1-tabs-7" role="tabpanel" aria-labelledby="ex1-tab-7">
+    <div class="row">
+      {% for article in articles %}
+      {% if article.article_topic == "Other" %}
+      <div class="col-md-4">
+        <div class="card">
+          {% if article.article_topic == "Development" %}
+          <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Technicals" %}
+          <img src="{{ url_for('static', filename='img/technicals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Fundamentals" %}
+          <img src="{{ url_for('static', filename='img/fundamentals-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "News" %}
+          <img src="{{ url_for('static', filename='img/news-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "Other" %}
+          <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% elif article.article_topic == "New Project" %}
+          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% else %}
+          <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
+            id="article-image-card">
+          {% endif %}
+          <div class="card-body">
+            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <h5 class="card-title">{{ article.article_title }}</h5>
+
+            <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
+          </div>
+        </div>
+
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- Tabs content -->
+
+
+
+{% endblock %}

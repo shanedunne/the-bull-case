@@ -67,12 +67,12 @@ footer {
 
 .reg-log-button {
     margin: auto;
-    background-color: #FCBF49;
+    background-color: #f78000;
     transition: 0.3s;
 }
 
 .reg-log-button:hover {
-    background-color: #F77F00;
+    background-color: #f78000e7;
 }
 
 input {
@@ -158,7 +158,7 @@ input {
 }
 
 .create-article {
-    background-color: #FCBF49;
+    background-color: #f78000;
     color: #fcfcfc;
     padding: 14px 25px;
     text-align: center;
@@ -170,7 +170,7 @@ input {
 
 .create-article:hover,
 .create-article:active {
-    background-color: #F77F00;
+    background-color: #f78000e7;
     color: #fcfcfc;
 }
 
@@ -192,7 +192,7 @@ h1, h2, h3, h4, h5, h6, {
     background-color: #D62828;
     color: #fcfcfc;
     transition: 0.3s;
-    float: right;
+
 }
 
 .delete-button:hover {
@@ -210,4 +210,26 @@ h1, h2, h3, h4, h5, h6, {
 .edit-button:hover {
     background-color: #f78000e7;
     color: #fafafa;
+}
+
+.cancel-edit {
+    margin: auto;
+    background-color: #D62828;
+    color: #fcfcfc;
+    transition: 0.3s;
+
+}
+
+.cancel-edit:hover {
+    background-color: #d62828ce;
+    color: #fafafa;
+}
+
+
+
+
+@media (min-width: 992px) {
+    .edit-delete-div {
+        float: right;
+    }
 }

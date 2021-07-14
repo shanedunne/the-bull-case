@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row g-0 d-flex vertical-center justify-content-center">
+        <form class="col-sm-12 col-md-12 col-lg-10" method="POST" action="{{ url_for('edit_article', article_id=article_id) }}">
+            <div class="card create-article-card">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Edit Article</h3>
+                    <br>
+                    <p>Edit the fields below to ammend or provide additional information</p>
+                    <br>
+                    <div class="form-outline ">
+                        <input type="text" id="article_title" class="form-control article-form"
+                        value="{{ article.article_title }}" name="article_title" maxlength="75" required/>
+                        <label class="form-label" for="article_title">Article Title</label>
+                    </div>
+                    <br>
+                    <div class="form-outline">
+                        <i class="fas fa-sort-down trailing"></i>
+                        <select id="article_topic" name="article_topic" 
+                        value="{{ article.article_topic }}" class="form-control article-form">
+                            <option value="" disabled selected>Choose Topic</option>
+                            {% for topic in topics %}
+                                <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-outline ">
+                        <input type="text" id="article_coin" class="form-control article-form" 
+                        value="{{ article.article_coin }}" name="article_coin" />
+                        <label class="form-label" for="article_coin">Coin or Token Name (if applicable)</label>
+                    </div>
+                    <br>
+                    <div class="form-outline ">
+                        <textarea id="article_body" class="form-control article-form" 
+                        value="{{ article.article_body }}" name="article_body" rows="10" required></textarea>
+                        <label class="form-label" for="article_body">Type your thoughts...</label>
+                    </div>
+                    <br>
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-primary cancel-edit">Cancel</a>
+                    <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Update Article <i
+                            class="fas fa-sign-in-alt"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

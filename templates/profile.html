@@ -6,7 +6,7 @@
         <h3>Click to Read, Edit or Delete any of your articles here!</h3>
         <div class="row">
             {% for article in articles %}
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card">
                         {% if article.article_topic == "Development" %}
                         <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -36,10 +36,12 @@
 
                             <a href="{{ url_for('view_article', article_id=article._id) }}"
                                 class="btn btn-primary read-button">Read</a>
-                            <a href="{{ url_for('edit_article', article_id=article._id) }}"
-                                class="btn btn-primary edit-button">Edit</a>
-                            <a href="{{ url_for('view_article', article_id=article._id) }}"
-                                class="btn btn-primary delete-button">Delete</a>
+                            <div class="edit-delete-div">
+                                <a href="{{ url_for('edit_article', article_id=article._id) }}"
+                                    class="btn btn-primary edit-button">Edit</a>
+                                <a href="{{ url_for('view_article', article_id=article._id) }}"
+                                    class="btn btn-primary delete-button">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>

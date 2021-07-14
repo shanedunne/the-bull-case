@@ -126,7 +126,6 @@ def view_article(article_id):
     return render_template("article.html", article=article)
 
 
-
 # Create new article
 @app.route("/post_article", methods=["GET", "POST"])
 def post_article():
@@ -141,18 +140,19 @@ def post_article():
         }
         mongo.db.articles.insert_one(article)
         username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+            {"username": session["user"]})["username"]
         flash("Article posted")
         return redirect(url_for("profile", username=username))
 
     topics = mongo.db.topics.find().sort("topic_name", 1)
     return render_template("post-article.html", topics=topics)
 
+
 # Edit Task
-@app.route("/edit_article/article_id", methods=["GET", "POST"])
+@app.route("/edit_article/<article_id>", methods=["GET", "POST"])
 def edit_article(article_id):
     if request.method == "POST":
-        article = {
+        updated = {
             "article_title": request.form.get("article_title"),
             "article_topic": request.form.get("article_topic"),
             "article_coin": request.form.get("article_coin"),
@@ -160,12 +160,13 @@ def edit_article(article_id):
             "article_author": session["user"]
             # add timestamp
         }
-        mongo.db.articles.update({"_id": ObjectId(task_id)}, article)
+        mongo.db.articles.update({"_id": ObjectId(article_id)}, updated)
         flash("Article Updated")
 
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     topics = mongo.db.topics.find().sort("topic_name", 1)
-    return render_template("profile.html", article=article, topics=topics)
+    return render_template("edit-article.html", article=article, topics=topics)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
