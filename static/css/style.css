@@ -123,6 +123,14 @@ input {
     text-align: right;
 }
 
+.article-body p {
+    background-color: #fcfcfc !important;
+    color: #575757 !important;
+    font-family: proxima-nova, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 300 !important;
+}
+
 /*---- Post Article-----*/
 
 .articles-header {

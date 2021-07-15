@@ -1,0 +1,9 @@
+@media screen {
+    body {
+        background-color: #fcfcfc;
+        color: #575757;
+        font-family: proxima-nova, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+    }
+}
