@@ -5,7 +5,7 @@
 <h1>{{ username }}'s Profile</h1>
 <h3>Click to Read, Edit or Delete any of your articles here!</h3>
 <div class="row">
-    {% for article in articles %}
+    {% for article in articles|sort(attribute="article_topic") %}
     <div class="col-md-6 col-lg-4">
         <div class="card">
             {% if article.article_topic == "Development" %}
@@ -39,7 +39,8 @@
                 <div class="edit-delete-div">
                     <a href="{{ url_for('edit_article', article_id=article._id) }}"
                         class="btn btn-primary edit-button">Edit</a>
-                    <a href="#" class="btn btn-primary delete-button" data-mdb-toggle="modal"
+                    <a href="{{ url_for('delete_modal', article_id=article._id) }}" 
+                    class="btn btn-primary delete-button" data-mdb-toggle="modal"
                         data-mdb-target="#deleteModal">Delete</a>
                 </div>
                 <!-- Modal -->

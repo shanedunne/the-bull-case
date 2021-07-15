@@ -118,7 +118,7 @@ input {
 .published-date-right {
     display: block;
     float: right;
-    width: 160px;
+    width: 180px;
     white-space: nowrap;
     text-align: right;
 }

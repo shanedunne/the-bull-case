@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -135,8 +136,8 @@ def post_article():
             "article_topic": request.form.get("article_topic"),
             "article_coin": request.form.get("article_coin"),
             "article_body": request.form.get("article_body"),
-            "article_author": session["user"]
-            # add timestamp
+            "article_author": session["user"],
+            "article_published_date": datetime.now().strftime("%c")
         }
         mongo.db.articles.insert_one(article)
         username = mongo.db.users.find_one(
@@ -166,6 +167,12 @@ def edit_article(article_id):
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     topics = mongo.db.topics.find().sort("topic_name", 1)
     return render_template("edit-article.html", article=article, topics=topics)
+
+# Render article template
+@app.route("/delete_modal/<article_id>")
+def delete_modal(article_id):
+    article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
+    return render_template("profile.html", article=article)
 
 
 if __name__ == "__main__":
