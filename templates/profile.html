@@ -59,7 +59,7 @@
                                 <button type="button" class="btn btn-secondary no-thanks-button" data-mdb-dismiss="modal">
                                     No thanks
                                 </button>
-                                <button type="button" class="btn btn-primary yes-delete-button">Yes, Delete</button>
+                                <a href="{{ url_for('delete_article', article_id=article._id) }}" class="btn btn-primary yes-delete-button">Yes, Delete</a>
                             </div>
                         </div>
                     </div>

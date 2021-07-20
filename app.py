@@ -167,12 +167,12 @@ def edit_article(article_id):
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
         flash("Article Updated")
-        return redirect(url_for("profile", username=username))
-        
+        return redirect(url_for("profile", username=username))       
 
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     topics = mongo.db.topics.find().sort("topic_name", 1)
     return render_template("edit-article.html", article=article, topics=topics)
+
 
 # Render article template
 @app.route("/delete_modal/<article_id>")
@@ -180,6 +180,14 @@ def delete_modal(article_id):
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     return render_template("profile.html", article=article)
 
+
+@app.route("/delete_article/<article_id>")
+def delete_article(article_id):
+    mongo.db.articles.remove({"_id": ObjectId(article_id)})
+    username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+    flash("Article Deleted")
+    return redirect(url_for("profile", username=username))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
