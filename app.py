@@ -137,7 +137,8 @@ def post_article():
             "article_coin": request.form.get("article_coin"),
             "article_body": request.form.get("article_body"),
             "article_author": session["user"],
-            "article_published_date": datetime.now().strftime("%c")
+            "article_published_datetime": datetime.now().strftime("%c"),
+            "article_date": datetime.now().strftime("%x")
         }
         mongo.db.articles.insert_one(article)
         username = mongo.db.users.find_one(
@@ -158,11 +159,16 @@ def edit_article(article_id):
             "article_topic": request.form.get("article_topic"),
             "article_coin": request.form.get("article_coin"),
             "article_body": request.form.getlist("article_body"),
-            "article_author": session["user"]
-            # add timestamp
+            "article_author": session["user"],
+            "article_published_datetime": datetime.now().strftime("%c"),
+            "article_date": datetime.now().strftime("%x")
         }
         mongo.db.articles.update({"_id": ObjectId(article_id)}, updated)
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
         flash("Article Updated")
+        return redirect(url_for("profile", username=username))
+        
 
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     topics = mongo.db.topics.find().sort("topic_name", 1)

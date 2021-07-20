@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row d-flex justify-content-center">
   <img
-    src="https://isg-one.com/images/default-source/default-album/blockchain-use-cases.tmb-th1190-446.jpg?sfvrsn=5fa4cc31_0"
+    src="{{ url_for('static', filename='img/block-home-img-cropped.jpg') }}"
     alt="" class="big-img">
 </div>
 <div class="articles-header">
@@ -60,7 +60,7 @@
 
     <div class="row">
       {% for article in articles %}
-      <div class="col-md-4">
+      <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -77,15 +77,16 @@
           {% elif article.article_topic == "Other" %}
           <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
-          {% elif article.article_topic == "New Project" %}
-          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
-            id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
           {% else %}
           <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
           {% endif %}
           <div class="card-body">
-            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <span class="article-card-topic">{{ article.article_topic }}</span>
+            <span class="article-date-card">{{ article.article_date }}</span>
             <h5 class="card-title">{{ article.article_title }}</h5>
 
             <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
@@ -101,7 +102,7 @@
     <div class="row">
       {% for article in articles %}
       {% if article.article_topic == "Development" %}
-      <div class="col-md-4">
+      <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -118,15 +119,16 @@
           {% elif article.article_topic == "Other" %}
           <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
-          {% elif article.article_topic == "New Project" %}
-          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
-            id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
           {% else %}
           <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
           {% endif %}
           <div class="card-body">
-            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <span class="article-card-topic">{{ article.article_topic }}</span>
+            <span class="article-date-card">{{ article.article_date }}</span>
             <h5 class="card-title">{{ article.article_title }}</h5>
 
             <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
@@ -142,7 +144,7 @@
     <div class="row">
       {% for article in articles %}
       {% if article.article_topic == "Fundamentals" %}
-      <div class="col-md-4">
+      <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -159,15 +161,16 @@
           {% elif article.article_topic == "Other" %}
           <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
-          {% elif article.article_topic == "New Project" %}
-          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
-            id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
           {% else %}
           <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
           {% endif %}
           <div class="card-body">
-            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <span class="article-card-topic">{{ article.article_topic }}</span>
+            <span class="article-date-card">{{ article.article_date }}</span>
             <h5 class="card-title">{{ article.article_title }}</h5>
 
             <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
@@ -183,7 +186,7 @@
     <div class="row">
       {% for article in articles %}
       {% if article.article_topic == "Technicals" %}
-      <div class="col-md-4">
+      <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -200,15 +203,16 @@
           {% elif article.article_topic == "Other" %}
           <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
-          {% elif article.article_topic == "New Project" %}
-          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
-            id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
           {% else %}
           <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
           {% endif %}
           <div class="card-body">
-            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <span class="article-card-topic">{{ article.article_topic }}</span>
+            <span class="article-date-card">{{ article.article_date }}</span>
             <h5 class="card-title">{{ article.article_title }}</h5>
 
             <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
@@ -223,8 +227,8 @@
   <div class="tab-pane fade" id="ex1-tabs-5" role="tabpanel" aria-labelledby="ex1-tab-5">
     <div class="row">
       {% for article in articles %}
-      {% if article.article_topic == "New Project" %}
-      <div class="col-md-4">
+      {% if article.article_topic == "New Projects" %}
+      <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -241,15 +245,16 @@
           {% elif article.article_topic == "Other" %}
           <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
-          {% elif article.article_topic == "New Project" %}
-          <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image-card"
-            id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
           {% else %}
           <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
           {% endif %}
           <div class="card-body">
-            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <span class="article-card-topic">{{ article.article_topic }}</span>
+            <span class="article-date-card">{{ article.article_date }}</span>
             <h5 class="card-title">{{ article.article_title }}</h5>
 
             <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
@@ -265,7 +270,7 @@
     <div class="row">
       {% for article in articles %}
       {% if article.article_topic == "News" %}
-      <div class="col-md-4">
+      <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -282,15 +287,16 @@
           {% elif article.article_topic == "Other" %}
           <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
-          {% elif article.article_topic == "New Projects" %}
-          <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
-            id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
           {% else %}
           <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
           {% endif %}
           <div class="card-body">
-            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <span class="article-card-topic">{{ article.article_topic }}</span>
+            <span class="article-date-card">{{ article.article_date }}</span>
             <h5 class="card-title">{{ article.article_title }}</h5>
 
             <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
@@ -306,7 +312,7 @@
     <div class="row">
       {% for article in articles %}
       {% if article.article_topic == "Other" %}
-      <div class="col-md-4">
+      <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card"
@@ -323,15 +329,16 @@
           {% elif article.article_topic == "Other" %}
           <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
-          {% elif article.article_topic == "New Project" %}
-          <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
-            id="article-image-card">
+            {% elif article.article_topic == "New Projects" %}
+            <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image-card"
+                id="article-image-card">
           {% else %}
           <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
             id="article-image-card">
           {% endif %}
           <div class="card-body">
-            <p class="article-card-topic">{{ article.article_topic }}</p>
+            <span class="article-card-topic">{{ article.article_topic }}</span>
+            <span class="article-date-card">{{ article.article_date }}</span>
             <h5 class="card-title">{{ article.article_title }}</h5>
 
             <a href="{{ url_for('view_article', article_id=article._id) }}" class="btn btn-primary read-button">Read</a>
