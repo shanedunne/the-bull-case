@@ -174,13 +174,14 @@ def edit_article(article_id):
     return render_template("edit-article.html", article=article, topics=topics)
 
 
-# Render article template
+# Render article delete modal
 @app.route("/delete_modal/<article_id>")
 def delete_modal(article_id):
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     return render_template("profile.html", article=article)
 
 
+# Delete article 
 @app.route("/delete_article/<article_id>")
 def delete_article(article_id):
     mongo.db.articles.remove({"_id": ObjectId(article_id)})
