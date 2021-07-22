@@ -42,7 +42,7 @@
                         class="btn btn-primary edit-button">Edit</a>
                     <a href="{{ url_for('delete_modal', article_id=article._id) }}" 
                     class="btn btn-primary delete-button" data-mdb-toggle="modal"
-                        data-mdb-target="#deleteModal">Delete</a>
+                        data-mdb-target="#deleteModal{{ article._id }}">Delete</a>
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="deleteModal{{ article._id }}" tabindex="-1" aria-labelledby="deleteModal{{ article._id }}"

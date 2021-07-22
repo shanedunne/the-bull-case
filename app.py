@@ -181,7 +181,7 @@ def delete_modal(article_id):
     return render_template("profile.html", article=article)
 
 
-# Delete article 
+# Delete article
 @app.route("/delete_article/<article_id>")
 def delete_article(article_id):
     mongo.db.articles.remove({"_id": ObjectId(article_id)})
