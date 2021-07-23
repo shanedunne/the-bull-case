@@ -273,3 +273,14 @@ h1, h2, h3, h4, h5, h6, {
 .no-thanks-button:hover {
     background-color:#f78000;
 }
+
+/*-----Comments-----*/
+
+.comment-datetime {
+    float: right;
+    padding-left: 20px;
+}
+
+.comment-username {
+    font-size: 20px;
+}
