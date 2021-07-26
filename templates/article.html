@@ -65,23 +65,22 @@
     <div class="comments">
         <h3>Comments</h3>
         <br>
-        <span class="comment-username"><strong>shaneadmin</strong></span>
+        <span class="comment-username"><strong>{{ comment.comment_author }}</strong></span>
         <span class="comment-datetime">08:31 23/07/2021</span>
-        <p class="comment-body">Hi this is a test comment to say that i like your piece on bitcoin</p>
+        <p class="comment-body">{{ comment.comment_body }}</p>
         
     </div>
     <br>
     <h3>Post Comment</h3>
         <div class="row g-0 d-flex vertical-center justify-content-center">
             <div class="col">
-                <form action="" method="POST">
+                <form action="{{ url_for('post_comment', article_id=article._id) }}" method="POST">
                     <div class="form-outline ">
-                        <textarea id="article_body" class="form-control article-form" name="article_body"
-                            rows="2"></textarea>
-                        <label class="form-label" for="article_body">Type your thoughts...</label>
+                        <textarea id="comment_body" class="form-control article-form" name="comment_body"
+                            placeholder="Type comments here..."></textarea>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Post Article <i
+                    <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Post Comment <i
                             class="fas fa-comment"></i></button>
                 </form>
             </div>

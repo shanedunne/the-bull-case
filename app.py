@@ -124,7 +124,8 @@ def get_articles():
 @app.route("/view_article/<article_id>")
 def view_article(article_id):
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
-    return render_template("article.html", article=article)
+    comment = mongo.db.comments.find_one({"_id": ObjectId(article_id)})
+    return render_template("article.html", article=article, comment=comment)
 
 
 # Create new article
@@ -189,6 +190,25 @@ def delete_article(article_id):
             {"username": session["user"]})["username"]
     flash("Article Deleted")
     return redirect(url_for("profile", username=username))
+
+
+# Post Comment
+@app.route("/post_comment/<article_id>", methods=["GET", "POST"])
+def post_comment(article_id):
+    if request.method == "POST":
+        comment = {
+            "comment_author": session["user"],
+            "article_id": article_id,
+            "comment_body": request.form.get("article_body"),
+            "comment_published_datetime": datetime.now().strftime("%c")
+        }
+        mongo.db.comments.insert_one(comment)
+        article = mongo.db.articles.find_one({
+            "_id": ObjectId(article_id)})["article"]
+        return redirect(url_for("'view_article', article_id=article._id",
+            article=article))
+
+    return render_template("post-article.html")
 
 
 if __name__ == "__main__":
