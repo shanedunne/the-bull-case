@@ -72,9 +72,9 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for("profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -199,16 +199,16 @@ def post_comment(article_id):
         comment = {
             "comment_author": session["user"],
             "article_id": article_id,
-            "comment_body": request.form.get("article_body"),
+            "comment_body": request.form.get("comment_body"),
             "comment_published_datetime": datetime.now().strftime("%c")
         }
         mongo.db.comments.insert_one(comment)
         article = mongo.db.articles.find_one({
-            "_id": ObjectId(article_id)})["article"]
-        return redirect(url_for("'view_article', article_id=article._id",
+            "_id": ObjectId(article_id)})
+        return redirect(url_for('view_article', article_id=article["_id"],
             article=article))
 
-    return render_template("post-article.html")
+    return render_template("articles.html")
 
 
 if __name__ == "__main__":
