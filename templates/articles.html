@@ -6,15 +6,13 @@
     src="{{ url_for('static', filename='img/block-home-img-cropped.jpg') }}"
     alt="" class="bg-image">
 </div>
-<div class="articles-header">
-  <h1>Community Articles</h1>
-  <p>Navigate through our collection of community submitted articles or create your own by clicking the button below
-  </p>
-  <div class="article-header-button">
-    <a href="{{ url_for('post_article') }}" class="create-article">Post Article <i class="fas fa-plus"></i></a>
+
+<!-- Jumbotron -->
+<div class="p-5 text-center bg-light">
+  <h1 class="mb-3">Community Articles</h1>
+  <h4 class="mb-3">Navigate through our collection of community submitted articles or create your own by clicking the button below</h4>
+  <a href="{{ url_for('post_article') }}" class="create-article">Post Article <i class="fas fa-plus"></i></a>
   </div>
-  <br>
-</div>
 
 
 <!-- Tabs navs -->
@@ -59,7 +57,7 @@
 
 
     <div class="row">
-      {% for article in articles %}
+      {% for article in articles|sort(reverse=true, attribute="article_date") %}
       <div class="col-md-4 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
@@ -100,7 +98,7 @@
   </div>
   <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
     <div class="row">
-      {% for article in articles %}
+      {% for article in articles|sort(reverse=true, attribute="article_date") %}
       {% if article.article_topic == "Development" %}
       <div class="col-md-4 article-card">
         <div class="card">
@@ -142,7 +140,7 @@
   </div>
   <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
     <div class="row">
-      {% for article in articles %}
+      {% for article in articles|sort(reverse=true, attribute="article_date") %}
       {% if article.article_topic == "Fundamentals" %}
       <div class="col-md-4 article-card">
         <div class="card">
@@ -184,7 +182,7 @@
   </div>
   <div class="tab-pane fade" id="ex1-tabs-4" role="tabpanel" aria-labelledby="ex1-tab-4">
     <div class="row">
-      {% for article in articles %}
+      {% for article in articles|sort(reverse=true, attribute="article_date") %}
       {% if article.article_topic == "Technicals" %}
       <div class="col-md-4 article-card">
         <div class="card">
@@ -226,7 +224,7 @@
   </div>
   <div class="tab-pane fade" id="ex1-tabs-5" role="tabpanel" aria-labelledby="ex1-tab-5">
     <div class="row">
-      {% for article in articles %}
+      {% for article in articles|sort(reverse=true, attribute="article_date") %}
       {% if article.article_topic == "New Projects" %}
       <div class="col-md-4 article-card">
         <div class="card">
@@ -268,7 +266,7 @@
   </div>
   <div class="tab-pane fade" id="ex1-tabs-6" role="tabpanel" aria-labelledby="ex1-tab-6">
     <div class="row">
-      {% for article in articles %}
+      {% for article in articles|sort(reverse=true, attribute="article_date") %}
       {% if article.article_topic == "News" %}
       <div class="col-md-4 article-card">
         <div class="card">
@@ -310,7 +308,7 @@
   </div>
   <div class="tab-pane fade" id="ex1-tabs-7" role="tabpanel" aria-labelledby="ex1-tab-7">
     <div class="row">
-      {% for article in articles %}
+      {% for article in articles|sort(reverse=true, attribute="article_date") %}
       {% if article.article_topic == "Other" %}
       <div class="col-md-4 article-card">
         <div class="card">

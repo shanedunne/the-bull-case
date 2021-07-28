@@ -5,7 +5,7 @@
 <h1>{{ username }}'s Profile</h1>
 <h3>Click to Read, Edit or Delete any of your articles here!</h3>
 <div class="row">
-    {% for article in articles|sort(attribute="article_topic") %}
+    {% for article in articles|sort(reverse=true, attribute="article_date") %}
     <div class="col-md-6 col-lg-4 article-card">
         <div class="card">
             {% if article.article_topic == "Development" %}
