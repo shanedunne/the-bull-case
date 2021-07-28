@@ -22,7 +22,8 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     topics = mongo.db.topics.find()
-    return render_template("home.html", topics=topics)
+    articles = list(mongo.db.articles.find())
+    return render_template("home.html", topics=topics, articles=articles)
 
 
 # Render register page

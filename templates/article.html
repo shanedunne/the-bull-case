@@ -69,10 +69,11 @@
         {% for comment in comments %}
 
         <div class="comment-div">
-            <span class="comment-username">Added by: <strong>{{ comment.comment_author }}</strong></span>
-            <span class="comment-datetime">Date added: {{ comment.comment_published_datetime }}</span>
+            <span class="comment-username"><strong>{{ comment.comment_author }}</strong></span>
+            <span class="comment-datetime">{{ comment.comment_published_datetime }}</span>
             <p class="comment-body">{{ comment.comment_body }}</p>
         </div>
+        <br><br>
 
         {% endfor %}
 
