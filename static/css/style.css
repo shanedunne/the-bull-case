@@ -174,7 +174,7 @@ input {
     color: #fafafa;
 }
 
-.create-article {
+.create-article, .home-call-button {
     background-color: #f78000;
     color: #fcfcfc;
     padding: 14px 25px;
@@ -186,7 +186,9 @@ input {
 }
 
 .create-article:hover,
-.create-article:active {
+.create-article:active,
+.home-call-button:hover,
+.home-call-button:active {
     background-color: #f78000e7;
     color: #fcfcfc;
 }

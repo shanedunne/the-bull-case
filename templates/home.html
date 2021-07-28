@@ -11,9 +11,9 @@
       <h1 class="mb-3">The Bull Case</h1>
       <h4 class="mb-3">The home of all things crypto from fundamental and technical analysis to development and project disucssion. Share your bullish ideas and thoughts with the community</h4>
       {% if session.user %}
-        <a class="btn btn-primary reg-log-button" href="{{ url_for('post_article') }}" role="button">Create Article</a>
+        <a  href="{{ url_for('post_article') }}" role="button" class="home-call-button">Create Article</a>
       {% else %}
-        <a class="btn btn-primary reg-log-button" href="{{ url_for('register') }}" role="button">Register Now!</a>
+        <a  href="{{ url_for('register') }}" role="button" class="home-call-button">Register Now!</a>
       {% endif %}
     </div>
     <!-- Jumbotron -->

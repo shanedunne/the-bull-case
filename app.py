@@ -124,8 +124,9 @@ def get_articles():
 @app.route("/view_article/<article_id>")
 def view_article(article_id):
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
-    comment = mongo.db.comments.find_one({"_id": ObjectId(article_id)})
-    return render_template("article.html", article=article, comment=comment)
+    comments = list(mongo.db.comments.find({"article_id": article_id}))
+    print(comments)
+    return render_template("article.html", article=article, comments=comments)
 
 
 # Create new article
@@ -203,10 +204,12 @@ def post_comment(article_id):
             "comment_published_datetime": datetime.now().strftime("%c")
         }
         mongo.db.comments.insert_one(comment)
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
         article = mongo.db.articles.find_one({
             "_id": ObjectId(article_id)})
         return redirect(url_for('view_article', article_id=article["_id"],
-            article=article))
+                                article=article, username=username))
 
     return render_template("articles.html")
 

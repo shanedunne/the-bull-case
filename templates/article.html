@@ -65,27 +65,36 @@
     <div class="comments">
         <h3>Comments</h3>
         <br>
-        {% for comment in comments %}
-        <span class="comment-username"><strong>{{ comment.comment_author }}</strong></span>
-        <span class="comment-datetime">{{ comment.comment_published_datetime }}</span>
-        <p class="comment-body">{{ comment.comment_body }}</p>
-        {% endfor %}
         
+        {% for comment in comments %}
+
+        <div class="comment-div">
+            <span class="comment-username">Added by: <strong>{{ comment.comment_author }}</strong></span>
+            <span class="comment-datetime">Date added: {{ comment.comment_published_datetime }}</span>
+            <p class="comment-body">{{ comment.comment_body }}</p>
+        </div>
+
+        {% endfor %}
+
+        
+
     </div>
     <br>
+    {% if session.user %}
     <h3>Post Comment</h3>
-        <div class="row g-0 d-flex vertical-center justify-content-center">
-            <div class="col">
-                <form action="{{ url_for('post_comment', article_id=article._id) }}" method="POST">
-                    <div class="form-outline ">
-                        <textarea id="comment_body" class="form-control article-form" name="comment_body"
-                            placeholder="Type comments here..."></textarea>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Post Comment <i
-                            class="fas fa-comment"></i></button>
-                </form>
-            </div>
+    <div class="row g-0 d-flex vertical-center justify-content-center">
+        <div class="col">
+            <form action="{{ url_for('post_comment', article_id=article._id) }}" method="POST">
+                <div class="form-outline ">
+                    <textarea id="comment_body" class="form-control article-form" name="comment_body"
+                        placeholder="Type comments here..."></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Post Comment <i
+                        class="fas fa-comment"></i></button>
+            </form>
         </div>
+    </div>
+    {% endif %}
     
     {% endblock %}
