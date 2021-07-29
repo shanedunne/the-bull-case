@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     topics = mongo.db.topics.find()
-    articles = list(mongo.db.articles.find())
+    articles = list(mongo.db.articles.find().sort('article_date', -1).limit(4))
     return render_template("home.html", topics=topics, articles=articles)
 
 
@@ -213,6 +213,8 @@ def post_comment(article_id):
                                 article=article, username=username))
 
     return render_template("articles.html")
+
+
 
 
 if __name__ == "__main__":

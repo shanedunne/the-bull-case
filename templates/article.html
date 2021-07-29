@@ -65,24 +65,29 @@
     <div class="comments">
         <h3>Comments</h3>
         <br>
-        
+        {% if comments%}
         {% for comment in comments %}
 
         <div class="comment-div">
             <span class="comment-username"><strong>{{ comment.comment_author }}</strong></span>
             <span class="comment-datetime">{{ comment.comment_published_datetime }}</span>
             <p class="comment-body">{{ comment.comment_body }}</p>
+            <span><a href="{{ url_for('delete_modal', article_id=article._id) }}" 
+                class="delete-comment" data-mdb-toggle="modal"
+                    data-mdb-target="#deleteModal{{ article._id }}">Delete</a></span>
         </div>
         <br><br>
 
         {% endfor %}
-
+        {% else %}
+        <h6>No comments yet...</h6>
+        {% endif %}
         
 
     </div>
     <br>
     {% if session.user %}
-    <h3>Post Comment</h3>
+    <h3 class="post-comment-header">Post Comment</h3>
     <div class="row g-0 d-flex vertical-center justify-content-center">
         <div class="col">
             <form action="{{ url_for('post_comment', article_id=article._id) }}" method="POST">
@@ -91,8 +96,8 @@
                         placeholder="Type comments here..."></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Post Comment <i
-                        class="fas fa-comment"></i></button>
+                <a type="submit" class="post-comment-button" role="button">Post Comment <i
+                        class="fas fa-comment"></i></a>
             </form>
         </div>
     </div>
