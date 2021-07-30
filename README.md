@@ -53,3 +53,18 @@ The structure and layout of pages is very similar across the board and allows fo
 
 ### Skeleton
 - [Wireframes](static/docs/wireframes.pdf) - The final commit has not differed much from the initial intentions highlighted in the wireframes
+- Navigation Bar
+- - Home - Homepage containing call to action, blurb on purpose of site and a few featured articles
+- - Articles - Call to action to post article with articles below catagorised by topic on different tabs
+- - Post Article - Form to contribute an article including TinyMCE textarea
+- - Article - Article page displaying topic, image, author, date published and the article body with a comments section at the bottom
+- - Login - Simple login form requesting username and password. Link at bottom of form to register if not already
+- - Register - Simple register form requesting full name, email address, username and password. Link at bottom of form to login if already registered
+- - Profile - Contains all articles contributed by user with buttons to read, edit and delete articles. Delete articles propmts a modal to make sure the user wants to delete
+- - Edit - Allows user to edit article with pre-populated fields containing original article
+-
+- Database Diagram
+![Project Across Devices](static/docs/dbd)
+
+### Surface
+

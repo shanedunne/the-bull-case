@@ -1,5 +1,5 @@
 body {
-    background-color: #fcfcfc;
+    background-color: #fafafa;
     color: #575757;
     font-family: proxima-nova, sans-serif;
     font-style: normal;
@@ -44,7 +44,7 @@ footer {
 
 /* Form */
 .card {
-    background-color: #fcfcfc;
+    background-color: #fff;
     color: #575757;
     font-family: proxima-nova, sans-serif;
     font-style: normal;
@@ -125,7 +125,7 @@ input {
 }
 
 .article-body p {
-    background-color: #fcfcfc !important;
+    background-color: #fafafa !important;
     color: #575757 !important;
     font-family: proxima-nova, sans-serif !important;
     font-style: normal !important;
@@ -151,7 +151,10 @@ input {
 .article-image-card {
     width:  95%;
     height: 250px;
-    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
 }
 
 .article-date-card {
