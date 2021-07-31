@@ -16,10 +16,11 @@ The Bull Case aims to provide a place for blockchain enthusiasts to research, ke
   - [Existing Features](#existing-features)
   - [Features to consider implementing in the future](#features-to-consider-implementing-in-the-future)
 - [Technologies Used](#technologies-used)
-  - [Languages](#1-languages)
-  - [Integrations](#2-integrations)
-  - [Workspace, Version Control, and Repository Storage](#3-workspace-version-control-and-repository-storage)
+  - [Languages](#languages)
+  - [Frameworks/Tools](#Frameworks/Tools)
+  - [Workspace and Related Tools](#workspace-and-related-tools)
 - [Resources](#resources)
+- [Code Validation Tools](#code-validation-tools)
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Credits](#credits)
@@ -67,4 +68,60 @@ The structure and layout of pages is very similar across the board and allows fo
 ![Project Across Devices](static/docs/dbd)
 
 ### Surface
+The intention for the design was to keep everything simple and not take away from the content
+#### Colours
+The base colours 
+
+## Features
+### Deployed Features
+- Collapsable navigation bar from MDBootstrap
+- Call to actions to either register/login or create an article
+- Featured articles on the home page
+- Articles page with tabs organised by topics for easily identiying the content the user perfers
+- Comment section under each article for further discussion
+- Edit and delete functionality for the author of an article
+- Register, Login and Logout functionality
+
+### Features to consider implementing in the future
+- The ability to travel to an authors profile to read more of their articles
+- Coin metrics integration through an API
+
+## Technologies
+
+### Languages
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
+
+### Frameworks/Tools
+
+- [FontAwesome](https://fontawesome.com/) - Used for icons
+- [MDBootstrap](https://mdbootstrap.com/) - CSS framework
+- [jQuery](https://jquery.com/) - JavaScript library.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Python framework for building web applications
+- [Jinja2](https://jinja.palletsprojects.com/en/3.0.x/) - Templating engine to compliment Flask & Python
+- [MongoDB](https://www.mongodb.com/) - NoSQL database program, using JSON-like documents.
+
+### Workspace and Related Tools
+- [Gitpod](https://www.gitpod.io/) - Integrated Development Environment used to write the code
+- [GitHub](https://github.com/) - Repository hosting service
+- [Git](https://git-scm.com/) - Version control tool to manage any changes and allow to revert to previous version
+- [Heroku](https://www.heroku.com/) - Cloud based platform for hosting web applications feeding straight from the GitHub repository
+
+## Resources
+- [Stack Overflow](https://stackoverflow.com/) - Educational resource
+- [Youtube](https://www.youtube.com/) - Tutorial resource
+- [Balsamiq](https://balsamiq.com/wireframes/) - Used to generate Wireframes
+- [W3Schools](https://www.w3schools.com/js/default.asp) - Used to check up on methods etc.
+- [Quick DBD](https://www.quickdatabasediagrams.com/) - Database diagram visualisation tool
+- [Coolors](https://coolors.co/) - Help find suitable complimentary colours for the site
+
+## Code Validation Tools
+- [WC3 HTML Validator](https://validator.w3.org/) - Used to test HTML code
+- [WC3 CSS Validator](https://jigsaw.w3.org/css-validator/) - Used to test CSS code
+- [JS Hint](https://jshint.com/) - Used to test JavaScript
+- [PEP8 online](http://pep8online.com/) - Used to test Python code was written to PEP8 standards
+
+
 
