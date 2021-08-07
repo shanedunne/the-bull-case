@@ -126,7 +126,6 @@ def get_articles():
 def view_article(article_id):
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     comments = list(mongo.db.comments.find({"article_id": article_id}))
-    print(comments)
     return render_template("article.html", article=article, comments=comments)
 
 
@@ -224,8 +223,7 @@ def delete_comment(comment_id, article_id):
     article = mongo.db.articles.find_one({
         "_id": ObjectId(article_id)})
     flash("Comment Deleted")
-    return redirect(url_for('view_article', article_id=article["_id"],
-                            article=article, username=username))
+    return redirect(url_for('articles', username=username))
 
 
 if __name__ == "__main__":

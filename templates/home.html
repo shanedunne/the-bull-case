@@ -22,7 +22,7 @@
     {% for article in articles %}
     <div class="row d-flex justify-content-center">
 
-      <div class="col-md-8 article-card">
+      <div class="col-lg-8 col-sm-6 article-card">
         <div class="card">
           {% if article.article_topic == "Development" %}
           <img src="{{ url_for('static', filename='img/dev-image.jpg') }}" alt="" class="article-image-card-home"
