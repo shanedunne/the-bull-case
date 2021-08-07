@@ -29,8 +29,8 @@
                 {% elif article.article_topic == "Other" %}
                 <img src="{{ url_for('static', filename='img/other-image.jpg') }}" alt="" class="article-image"
                     id="article-image">
-                {% elif article.article_topic == "New Project" %}
-                <img src="{{ url_for('static', filename='img/new=project-image.png') }}" alt="" class="article-image"
+                {% elif article.article_topic == "New Projects" %}
+                <img src="{{ url_for('static', filename='img/new-project-image.png') }}" alt="" class="article-image"
                     id="article-image">
                 {% else %}
                 <img src="{{ url_for('static', filename='img/development-image.jpg') }}" alt="" class="article-image-card"
@@ -65,16 +65,17 @@
     <div class="comments">
         <h3>Comments</h3>
         <br>
-        {% if comments%}
+        {% if comments %}
         {% for comment in comments %}
 
         <div class="comment-div">
             <span class="comment-username"><strong>{{ comment.comment_author }}</strong></span>
             <span class="comment-datetime">{{ comment.comment_published_datetime }}</span>
             <p class="comment-body">{{ comment.comment_body }}</p>
-            <span><a href="{{ url_for('delete_modal', article_id=article._id) }}" 
-                class="delete-comment" data-mdb-toggle="modal"
-                    data-mdb-target="#deleteModal{{ article._id }}">Delete</a></span>
+            {% if comment.comment_author == session.user %}
+            <span><a href="{{ url_for('delete_comment', comment_id=comment._id) }}"
+                    class="delete-comment">Delete</a></span>
+            {% endif %}
         </div>
         <br><br>
 
@@ -82,7 +83,7 @@
         {% else %}
         <h6>No comments yet...</h6>
         {% endif %}
-        
+
 
     </div>
     <br>
@@ -96,8 +97,8 @@
                         placeholder="Type comments here..."></textarea>
                 </div>
                 <br>
-                <a type="submit" class="post-comment-button" role="button">Post Comment <i
-                        class="fas fa-comment"></i></a>
+                <button type="submit" class="btn btn-primary btn-lg btn-rounded post-comment-button">
+                    Post Comment <i class="fas fa-comment"></i></button>
             </form>
         </div>
     </div>

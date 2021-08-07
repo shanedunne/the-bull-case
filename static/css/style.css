@@ -154,7 +154,7 @@ input {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 15px;
+    padding-top: 12px;
 }
 
 .article-date-card {
@@ -195,6 +195,14 @@ input {
     background-color: #f78000e7;
     color: #fcfcfc;
 }
+
+
+@media (min-width: 576px) {
+    .featured-articles {
+        text-align: center;
+    }
+}
+
 
 
 
@@ -303,6 +311,7 @@ h1, h2, h3, h4, h5, h6, {
     display: inline-block;
     border-radius: 5px;
     transition: 0.3s;
+    margin: auto;
 }
 
 .post-comment-button:hover {
