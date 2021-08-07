@@ -14,6 +14,12 @@ footer {
     width: 100%;
 }
 
+@media (max-width: 575.98px) { 
+    .bg-image, .big-img {
+        height: 100%;
+    }
+ }
+
 
 
 .carousel-indicators {
