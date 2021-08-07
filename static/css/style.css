@@ -15,7 +15,7 @@ footer {
 }
 
 @media (max-width: 575.98px) { 
-    .bg-image, .big-img {
+    .bg-image, .big-img, .article-image-card-home {
         height: 100%;
     }
  }
