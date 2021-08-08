@@ -32,11 +32,11 @@ The Bull Case aims to provide a place for blockchain enthusiasts to research, ke
 
 ### User Stories
 
-- User 1: I want a place where i can come and view the latest Crypto news.
-- User 2: I want a place where i can research specifically fundamental analysis of cryptocurrencies.
-- User 3: I am interested in the development side of Crypto and need a source where i can filter for development articles.
-- User 4: I have developed a new cryptocurrency project and would like a place to post articles sharing information about my project.
-- User 5: I am a technical analyst and i would like a platform where i can post my research. I do not want to manage my own blog or join social media.
+- User 1: I want an easy to use site which has a simple layout and an easy registration process
+- User 2: I want a place where i can come and view the latest Crypto news.
+- User 3: I want a place where i can research specifically fundamental analysis of cryptocurrencies.
+- User 4: I am interested in the crypto space and love to give feedback on information pieces
+- User 5: I have developed a new cryptocurrency project and would like a place to post articles sharing information about my project.
 
 ### Strategy
 - Provide a platform where users can educate themselves on all aspects of the Crypto space
@@ -122,6 +122,9 @@ The base colours
 - [WC3 CSS Validator](https://jigsaw.w3.org/css-validator/) - Used to test CSS code
 - [JS Hint](https://jshint.com/) - Used to test JavaScript
 - [PEP8 online](http://pep8online.com/) - Used to test Python code was written to PEP8 standards
+
+## Testing
+Testing documentation for this project can be found [HERE](static/testing/TESTING.md)
 
 
 
