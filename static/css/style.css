@@ -221,6 +221,24 @@ h1, h2, h3, h4, h5, h6, {
 
 /*-----Profile-----*/
 
+.profile-create-article {
+    background-color: #f78000;
+    color: #fcfcfc;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 250px;
+}
+
+.profile-create-article:hover,
+.profile-create-article:active {
+    background-color: #f78000e7;
+    color: #fcfcfc;
+}
+
 
 .delete-button {
     margin: auto;

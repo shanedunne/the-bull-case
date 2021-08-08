@@ -44,4 +44,20 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 **Profile**
 - Checked Read button on article cards
 - Checked that the Edit button opens the Post Article page with the article information filled in for editing
-- Checked the Delete button opens a modal with the article name and the Yes Delete button returns to the profile
+- Checked the Delete button opens a modal with the article name 
+- - Checked the Yes Delete button returns to the profile
+- - Checked the No Thanks button returns to the profile
+- - Checked the X closes the modal and returns to the profile
+
+## Page Functionality Testing
+### Nav Bar
+- Checked that Login and Register appear if no user is logged in
+- Checked that Profile and Logout appear if user is signed in
+
+### Register
+- Checked flash message appears if user tries to register with an existing username
+- Checked email field requires email formatting
+- Checked username and password will show error is special characters used
+
+### Login
+- Checked flash messages states username/password incorrect if user fails to login
