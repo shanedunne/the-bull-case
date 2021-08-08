@@ -169,7 +169,7 @@ def edit_article(article_id):
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
         flash("Article Updated")
-        return redirect(url_for("profile", username=username))       
+        return redirect(url_for("profile", username=username))
 
     article = mongo.db.articles.find_one({"_id": ObjectId(article_id)})
     topics = mongo.db.topics.find().sort("topic_name", 1)
@@ -208,6 +208,7 @@ def post_comment(article_id):
             {"username": session["user"]})["username"]
         article = mongo.db.articles.find_one({
             "_id": ObjectId(article_id)})
+        flash("Comment Posted")
         return redirect(url_for('view_article', article_id=article["_id"],
                                 article=article, username=username))
 
@@ -223,7 +224,8 @@ def delete_comment(comment_id, article_id):
     article = mongo.db.articles.find_one({
         "_id": ObjectId(article_id)})
     flash("Comment Deleted")
-    return redirect(url_for('articles', username=username))
+    return redirect(url_for('view_article', article_id=article["_id"],
+                            article=article, username=username))
 
 
 if __name__ == "__main__":

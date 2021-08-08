@@ -73,7 +73,7 @@
             <span class="comment-datetime">{{ comment.comment_published_datetime }}</span>
             <p class="comment-body">{{ comment.comment_body }}</p>
             {% if comment.comment_author == session.user %}
-            <span><a href="{{ url_for('delete_comment', comment_id=comment._id) }}"
+            <span><a href="{{ url_for('delete_comment', comment_id=comment._id, article_id=article._id) }}"
                     class="delete-comment">Delete</a></span>
             {% endif %}
         </div>
@@ -89,7 +89,7 @@
     <br>
     {% if session.user %}
     <h3 class="post-comment-header">Post Comment</h3>
-    <div class="row g-0 d-flex vertical-center justify-content-center">
+    <div class="row d-flex vertical-center justify-content-center">
         <div class="col">
             <form action="{{ url_for('post_comment', article_id=article._id) }}" method="POST">
                 <div class="form-outline ">
@@ -97,8 +97,10 @@
                         placeholder="Type comments here..."></textarea>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary btn-lg btn-rounded post-comment-button">
-                    Post Comment <i class="fas fa-comment"></i></button>
+                <div class="post-comment-button-div">
+                    <button type="submit" class="btn btn-primary btn-lg btn-rounded post-comment-button">
+                        Post Comment <i class="fas fa-comment"></i></button>
+                </div>
             </form>
         </div>
     </div>

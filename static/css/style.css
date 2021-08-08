@@ -132,12 +132,9 @@ input {
     text-align: right;
 }
 
-.article-body p {
-    background-color: #fafafa !important;
-    color: #575757 !important;
-    font-family: proxima-nova, sans-serif !important;
-    font-style: normal !important;
-    font-weight: 300 !important;
+.article-body {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /*---- Post Article-----*/
@@ -324,6 +321,31 @@ h1, h2, h3, h4, h5, h6, {
 
 .post-comment-button:hover {
     background-color: #f78000e7;
+}
+
+@media (max-width: 767.98px) { 
+    .post-comment-button {
+        height: 35px;
+        width: 115px;
+        padding: 2px 2px;
+        font-size: 10px;
+    }
+ }
+
+.post-comment-button-div {
+    text-align: center;
+}
+
+.delete-comment {
+    text-decoration: none;
+    color: #575757;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.delete-comment:hover {
+    text-decoration: underline;
+    color: #D62828;
 }
 
 /* articles  
