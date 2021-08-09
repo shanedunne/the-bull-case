@@ -124,7 +124,7 @@ The base colours
 - [PEP8 online](http://pep8online.com/) - Used to test Python code was written to PEP8 standards
 
 ## Testing
-Testing documentation for this project can be found [HERE](static/testing/TESTING.md)
+Testing documentation for this project can be found [HERE](static/docs/TESTING.md)
 
 
 

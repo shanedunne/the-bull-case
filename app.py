@@ -133,20 +133,23 @@ def view_article(article_id):
 @app.route("/post_article", methods=["GET", "POST"])
 def post_article():
     if request.method == "POST":
-        article = {
-            "article_title": request.form.get("article_title"),
-            "article_topic": request.form.get("article_topic"),
-            "article_coin": request.form.get("article_coin"),
-            "article_body": request.form.get("article_body"),
-            "article_author": session["user"],
-            "article_published_datetime": datetime.now().strftime("%c"),
-            "article_date": datetime.now().strftime("%x")
-        }
-        mongo.db.articles.insert_one(article)
-        username = mongo.db.users.find_one(
-            {"username": session["user"]})["username"]
-        flash("Article posted")
-        return redirect(url_for("profile", username=username))
+        if request.form.get("article_body") == "":
+            flash("Please fill in article body")
+        else:
+            article = {
+                "article_title": request.form.get("article_title"),
+                "article_topic": request.form.get("article_topic"),
+                "article_coin": request.form.get("article_coin"),
+                "article_body": request.form.get("article_body"),
+                "article_author": session["user"],
+                "article_published_datetime": datetime.now().strftime("%c"),
+                "article_date": datetime.now().strftime("%x")
+            }
+            mongo.db.articles.insert_one(article)
+            username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
+            flash("Article posted")
+            return redirect(url_for("profile", username=username))
 
     topics = mongo.db.topics.find().sort("topic_name", 1)
     return render_template("post-article.html", topics=topics)
