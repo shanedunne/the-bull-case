@@ -159,20 +159,16 @@ def post_article():
 @app.route("/edit_article/<article_id>", methods=["GET", "POST"])
 def edit_article(article_id):
     if request.method == "POST":
-        body = {
-            "article_body" == request.form.get("article_body")
-        }
         updated = {
             "article_title": request.form.get("article_title"),
             "article_topic": request.form.get("article_topic"),
             "article_coin": request.form.get("article_coin"),
-            "article_body": request.form.getlist("article_body"),
+            "article_body": request.form.get("edit_article_body"),
             "article_author": session["user"],
             "article_published_datetime": datetime.now().strftime("%c"),
             "article_date": datetime.now().strftime("%x")
         }
         mongo.db.articles.update({"_id": ObjectId(article_id)}, updated)
-        mongo.db.articles.find_one({"_id": ObjectId(article_id)}, body)
         username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
         flash("Article Updated")

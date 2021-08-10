@@ -16,7 +16,8 @@ console.log(body)
 */
 
 var body = document.getElementById("edit_article_body").getAttribute("value");
-document.getElementById("edit_article_body").innerHTML = body;
+var stringBody = body.toString(); 
+document.getElementById("edit_article_body").innerHTML = stringBody;
 
 tinymce.init({
   selector: '#edit_article_body',
