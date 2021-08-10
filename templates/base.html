@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tiny.cloud/1/yhghn4p3nhvbvg5lpl8vlcb43t4p5pqlf09w70rgq06n7111/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
-        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
@@ -17,84 +17,90 @@
 </head>
 
 <body>
+    <div id="wrapper">
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- Container wrapper -->
-            <div class="container-fluid">
-                <!--Logo-->
-                <a class="navbar-brand" href="{{ url_for('home') }}">The Bull Case</a>
-                <!-- Toggle button -->
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <!-- Container wrapper -->
+                <div class="container-fluid">
+                    <!--Logo-->
+                    <a class="navbar-brand" href="{{ url_for('home') }}">The Bull Case</a>
+                    <!-- Toggle button -->
+                    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarRightAlignExample" aria-controls="navbarRightAlignExample"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
 
-                <!-- Collapsible wrapper -->
-                <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-                    <!-- Left links -->
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{{ url_for('get_articles') }}">Articles</a>
-                        </li>
-                        {% if session.user %}
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url_for('register') }}">Register</a>
-                        </li>
-                        {% endif %}
+                    <!-- Collapsible wrapper -->
+                    <div class="collapse navbar-collapse" id="navbarRightAlignExample">
                         <!-- Left links -->
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"
+                                    href="{{ url_for('get_articles') }}">Articles</a>
+                            </li>
+                            {% if session.user %}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"
+                                    href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('logout') }}">Logout</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"
+                                    href="{{ url_for('register') }}">Register</a>
+                            </li>
+                            {% endif %}
+                            <!-- Left links -->
+                    </div>
+                    <!-- Collapsible wrapper -->
                 </div>
-                <!-- Collapsible wrapper -->
+                <!-- Container wrapper -->
+            </nav>
+        </header>
+        <section>
+            <!-- flash messages -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row flashes">
+                <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
             </div>
-            <!-- Container wrapper -->
-        </nav>
-    </header>
-    <section>
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <div class="row flashes">
-            <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-    </section>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </section>
 
-    <main class="container">
-        {% block content %}
+        <main class="container">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+        <footer>
+            <hr>
+            <div id="footer">
+                <p>For crypto metrics check out <a href="https://shanedunne.github.io/MS2_Crypto_Penguin/"
+                        target="_blank"> Crypto Penguin <img src="{{ url_for('static', filename='img/cp-icon.png') }}"
+                            class="footer-logo" alt="Crypto Penguin logo"></a></p>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js">
+        </script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        {% block scripts %}
         {% endblock %}
-    </main>
-    <footer>
-        <hr>
-        <div id="footer">
-            <p>For crypto metrics check out <a href="https://shanedunne.github.io/MS2_Crypto_Penguin/" target="_blank"> Crypto Penguin <img
-                src="{{ url_for('static', filename='img/cp-icon.png') }}" class="footer-logo" alt="Crypto Penguin logo"></a></p>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
+    
 </body>
 
 </html>

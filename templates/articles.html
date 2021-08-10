@@ -10,8 +10,13 @@
 <!-- Jumbotron -->
 <div class="p-5 text-center bg-light">
   <h1 class="mb-3">Community Articles</h1>
+  {% if session.user %}
   <h4 class="mb-3">Navigate through our collection of community submitted articles or create your own by clicking the button below</h4>
   <a href="{{ url_for('post_article') }}" class="create-article">Post Article <i class="fas fa-plus"></i></a>
+  {% else %}
+  <h4 class="mb-3">Navigate through our collection of community submitted articles or register to share your own ideas</h4>
+  <a  href="{{ url_for('register') }}" role="button" class="home-call-button">Register Now!</a>
+  {% endif %}
   </div>
 
 

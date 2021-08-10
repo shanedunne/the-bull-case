@@ -35,7 +35,7 @@
                     <div class="form-outline ">
                         <textarea id="edit_article_body" class="form-control article-form" 
                         value="{{ article.article_body }}" name="edit_article_body" rows="10"></textarea>
-                        <label class="form-label" for="article_body">Type your thoughts...</label>
+                        <label class="form-label" for="edit_article_body">Type your thoughts...</label>
                     </div>
                     <br>
                     <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-primary cancel-edit">Cancel</a>
