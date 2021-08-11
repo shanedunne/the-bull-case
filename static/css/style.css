@@ -407,3 +407,7 @@ footer a:focus {
         padding-left: 25px;
     }
  }
+
+.page-not-found-card {
+    text-align: center;
+}

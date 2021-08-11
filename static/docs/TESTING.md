@@ -61,3 +61,25 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 
 ### Login
 - Checked flash messages states username/password incorrect if user fails to login
+
+### Logout
+- Checked that logout button returns to Login page with flashed message notifying user they have been logged out
+
+### Profile
+- Checked welcome flash message appears upon login
+- Checked profile titled as usernames profile
+- Checked Create First Article button shows if user has no articles
+- - Checked this button routes to Post Article page
+- Checked Edit fucntionality works and updates article on database
+- Checked Delete fucntionality works and removes article from database
+
+### Home
+- Checked that the call of action is set to register if user not logged in and Post Article if user already logged in
+- Checked Featured Articles display 4no. most recent articles
+
+### Articles
+- Checked the correct articles are sorting by topic on each tab
+- Checked
+
+
+
