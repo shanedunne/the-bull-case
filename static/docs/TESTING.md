@@ -100,6 +100,12 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 ### 500 Page
 Checked route works as intended and displays if internal server error is encountered
 
+## Code Validation
+- [WC3 HTML Validator](https://validator.w3.org/) - One issue related to the Edit Article page. Reasoning explained in Issues and Solutions section of Readme
+- [WC3 CSS Validator](https://jigsaw.w3.org/css-validator/) - Passed
+- [JS Hint](https://jshint.com/) - Passed
+- [PEP8 online](http://pep8online.com/) - Passed
+
 ## Responsiveness
 Responsiveness was checked using [Responsinator](https://www.responsinator.com/) while also designed with responsiveness in mind with regular testing on Dev Tools. The responsiveness has been tested across multiple devices such as iPhone 8, iPhone 8 Plus, iPhone X, Samusing Galaxy X5, iPad etc.
 
