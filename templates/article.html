@@ -18,7 +18,8 @@
           <img src="https://ik.imagekit.io/sizql0avpyf/dev-image_HoZ8c--Ikq.jpg?updatedAt=1628761388654"
             srcset="https://ik.imagekit.io/sizql0avpyf/tr:w-450/dev-image_HoZ8c--Ikq.jpg?updatedAt=1628761388654 450w,
                             https://ik.imagekit.io/sizql0avpyf/tr:w-800/dev-image_HoZ8c--Ikq.jpg?updatedAt=1628761388654 800w,
-                            https://ik.imagekit.io/sizql0avpyf/tr:w-1400/dev-image_HoZ8c--Ikq.jpg?updatedAt=1628761388654 1400w" alt="Development Image" class="article-image" id="article-image-card">
+                            https://ik.imagekit.io/sizql0avpyf/tr:w-1400/dev-image_HoZ8c--Ikq.jpg?updatedAt=1628761388654 1400w" 
+                            sizes="(max-width: 500px) 450px, (max-width: 850px) 800px, 1400px" alt="Development Image" class="article-image" id="article-image-card">
           {% elif article.article_topic == "Technicals" %}
           <img src="https://ik.imagekit.io/sizql0avpyf/technicals-image_6SS-5k0pe.jpg?updatedAt=1628761421624"
             srcset="https://ik.imagekit.io/sizql0avpyf/tr:w-450/technicals-image_6SS-5k0pe.jpg?updatedAt=1628761421624 450w,
@@ -108,7 +109,7 @@
             <form action="{{ url_for('post_comment', article_id=article._id) }}" method="POST">
                 <div class="form-outline ">
                     <textarea id="comment_body" class="form-control article-form" name="comment_body"
-                        placeholder="Type comments here..."></textarea>
+                        placeholder="Type comments here..." required></textarea>
                 </div>
                 <br>
                 <div class="post-comment-button-div">

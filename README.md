@@ -23,6 +23,7 @@ The Bull Case aims to provide a place for blockchain enthusiasts to research, ke
 - [Code Validation Tools](#code-validation-tools)
 - [Testing](#testing)
 - [Issues and Solutions](#issues-and-solutions)
+- [Existing Bugs](#existing-bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
   - [Media](#media)
@@ -139,13 +140,25 @@ Testing documentation for this project can be found [HERE](static/docs/TESTING.m
                                     </div>
                                   </div>
 ```
-- Since TinyMCE hides the textarea and replaces it with the editor, i could not use the 'value' attribute to populate the textarea when editing. My solution was to use JavaScript to essentially catch the article body text and insert it into the text editor
+- Again, due to the textarea being hiden and replaced by TinyMCE I had to create a work around to ensure the article was not submitted nor submitted after editing with an empty body. The solution was to include the below snippet in both post_article and edit_article python functions
+```py
+                                  if request.form.get("article_body") == "":
+                                      flash("Please fill in article body")
+```
+## Existing Bugs
+- Since TinyMCE hides the textarea and replaces it with the editor, i could not populate the textarea when editing. My solution was to use JavaScript to essentially catch the article body text and insert it into the text editor. This however, isn't a best practice as a textarea should not have a value attribute. This issue renders an error on the W3 HTML Validator. As of now it is the best solution for the issue and i continue to seek a better alternative
 ```js
                                   var body = document.getElementById("edit_article_body").getAttribute("value");
                                   var stringBody = body.toString(); 
                                   document.getElementById("edit_article_body").innerHTML = stringBody;
 ```
-- 
+## Deployment
+This project is hosted on Heroku. I deployed the flask app to Heroku on my first day working on it in order to be able to test out deployed features as i coded
 
-
+- Login to Heroku and press 'New' in the top right corner, then press 'Create New App'
+- Next I entered the name of the project and the nearest region to me
+- Next I navigated to 'Settings' and then 'Config Vars'. From here I proceeded to add the configuration variables that I had set up in my env.py - IP, Port, Secret Key, MONGO URI and MONGODB NAME.
+- After this I navigated to the Deploy section.
+- Next I connected my GitHub repository for the project under 'Deployment Method'.
+- Finally, I selected the main branch and clicked 'Deploy Branch', ensuring Automatic Deployments were enables
 

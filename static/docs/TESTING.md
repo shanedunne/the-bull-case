@@ -100,6 +100,16 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 ### 500 Page
 Checked route works as intended and displays if internal server error is encountered
 
+## Responsiveness
+Responsiveness was checked using [Responsinator](https://www.responsinator.com/) while also designed with responsiveness in mind with regular testing on Dev Tools. The responsiveness has been tested across multiple devices such as iPhone 8, iPhone 8 Plus, iPhone X, Samusing Galaxy X5, iPad etc.
+
+## Usability 
+Prior to submission, I deployed the site to GitHub Pages in order to be able to share a link to the site with some friends who are also interested in Cryptocurrency. All of the feedback was very positive, each friend found it easy to use
+
+## Performance
+I tested the performance of the app with Lighthouse. Displayed below are results for both mobile and desktop of the 'Articles' page
+![Mobile](static/img/lighthouse-mobile-articles.png)
+
 
 
 

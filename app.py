@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Render home page
 @app.route("/")
 @app.route("/home")
@@ -72,7 +73,8 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                                    existing_user["password"],
+                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get(
                         "username")), 'flash')
@@ -237,12 +239,12 @@ def delete_comment(comment_id, article_id):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html', error=error),404
+    return render_template('404.html', error=error), 404
 
 
 @app.errorhandler(500)
 def internal_server_error(error):
-    return render_template('500.html', error=error),500
+    return render_template('500.html', error=error), 500
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

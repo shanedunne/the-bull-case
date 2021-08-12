@@ -59,12 +59,14 @@
                                 <a class="nav-link active" aria-current="page"
                                     href="{{ url_for('register') }}">Register</a>
                             </li>
+
                             {% endif %}
-                            <!-- Left links -->
+                        </ul>
+                        <!-- Left links end -->
                     </div>
-                    <!-- Collapsible wrapper -->
+                    <!-- Collapsible wrapper end -->
                 </div>
-                <!-- Container wrapper -->
+                <!-- Container wrapper end -->
             </nav>
         </header>
         <section>
@@ -89,13 +91,14 @@
         <hr>
         <div id="footer">
             <p>For crypto metrics check out <a href="https://shanedunne.github.io/MS2_Crypto_Penguin/" target="_blank"
-                    rel="noopener"> Crypto Penguin <img src="https://ik.imagekit.io/sizql0avpyf/tr:w-28,h-28/CP-ICON-BC__LT87sV21.png?updatedAt=1628768103326"
+                    rel="noopener"> Crypto Penguin <img
+                        src="https://ik.imagekit.io/sizql0avpyf/tr:w-28,h-28/CP-ICON-BC__LT87sV21.png?updatedAt=1628768103326"
                         class="footer-logo" alt="Crypto Penguin logo"></a></p>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" preconnect>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js">
     </script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}

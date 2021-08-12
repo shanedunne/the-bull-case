@@ -22,14 +22,17 @@ body {
     height: auto;
 }
 
-@media (max-width: 575.98px) { 
-    .bg-image, .big-img  {
+@media (max-width: 575.98px) {
+
+    .bg-image,
+    .big-img {
         height: 100%;
     }
+
     .article-image-card-home {
         max-height: 300px;
     }
- }
+}
 
 
 
@@ -65,7 +68,7 @@ body {
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 300;
-    
+
 }
 
 .reg-log-card {
@@ -159,13 +162,14 @@ input {
     padding-top: 10px;
 }
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
     color: #003049;
     border-color: #003049;
 }
 
 .article-image-card {
-    width:  95%;
+    width: 95%;
     height: 250px;
     display: block;
     margin-left: auto;
@@ -173,11 +177,11 @@ input {
     padding-top: 12px;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .article-image-card {
         height: auto;
     }
- }
+}
 
 
 
@@ -201,7 +205,8 @@ input {
     color: #fafafa;
 }
 
-.create-article, .home-call-button {
+.create-article,
+.home-call-button {
     background-color: #f78000;
     color: #fcfcfc;
     padding: 14px 25px;
@@ -230,12 +235,18 @@ input {
 
 
 
-h1, h2, h3, h4, h5, h6, {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    {
     color: #003049;
 }
 
 .article-form {
-    border: 1px solid #bdbdbd!important;
+    border: 1px solid #bdbdbd !important;
 }
 
 /*-----Profile-----*/
@@ -267,7 +278,8 @@ h1, h2, h3, h4, h5, h6, {
 
 }
 
-.delete-button:hover, .delete-button:focus {
+.delete-button:hover,
+.delete-button:focus {
     background-color: #d62828ce;
     color: #fafafa;
 }
@@ -326,7 +338,7 @@ h1, h2, h3, h4, h5, h6, {
 }
 
 .no-thanks-button:hover {
-    background-color:#f78000;
+    background-color: #f78000;
 }
 
 /*-----Comments-----*/
@@ -360,14 +372,14 @@ h1, h2, h3, h4, h5, h6, {
     background-color: #f78000e7;
 }
 
-@media (max-width: 767.98px) { 
+@media (max-width: 767.98px) {
     .post-comment-button {
         height: 35px;
         width: 115px;
         padding: 2px 2px;
         font-size: 10px;
     }
- }
+}
 
 .post-comment-button-div {
     text-align: center;
@@ -392,7 +404,7 @@ footer {
 }
 
 
-.footer-logo{
+.footer-logo {
     height: 28px;
     width: 28px;
 }
@@ -408,15 +420,15 @@ footer a {
 
 footer a:hover,
 footer a:focus {
-    color:#f78000;
+    color: #f78000;
     text-decoration: underline;
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     #footer {
         padding-left: 25px;
     }
- }
+}
 
 /*--- 404 & 500 ---*/
 
@@ -424,13 +436,14 @@ footer a:focus {
     height: 250px;
     text-align: center;
 }
+
 .vertical-center-PNF {
     margin: 0;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-  }
+}
 
 
 /* ---- Flash Messages ----*/

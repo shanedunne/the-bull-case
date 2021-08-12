@@ -1,36 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="row g-0 d-flex vertical-center justify-content-center">
-        <form class="col-sm-12 col-md-8 col-lg-4" method="POST" action="{{ url_for('login') }}">
-            <div class="card reg-log-card">
-                <div class="card-body text-center">
-                    <h3 class="card-title">Login</h3>
-                    <br>
-                    <br>
-                   <div class="form-outline ">
-                            <i class="fas fa-user trailing"></i>
-                            <input type="text" id="username" class="form-control" name="username" minlength="5"
-                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"/>
-                            <label class="form-label" for="username">Username</label>
-                        </div>
-                        <br>
-                        <div class="form-outline">
-                            <i class="fas fa-lock trailing"></i>
-                            <input type="password" id="password" class="form-control" name="password" minlength="5"
-                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"/>
-                            <label class="form-label" for="password">Password</label>
-                        </div>
-                        <br>
-                            <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Login! <i class="fas fa-sign-in-alt"></i></button>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                    <a href="{{ url_for('register') }}" class="not-reg-link">Not Registered?</a>
-                            </div>
-                        </div>
+<div class="row g-0 d-flex vertical-center justify-content-center">
+    <form class="col-sm-12 col-md-8 col-lg-4" method="POST" action="{{ url_for('login') }}">
+        <div class="card reg-log-card">
+            <div class="card-body text-center">
+                <h3 class="card-title">Login</h3>
+                <br>
+                <br>
+                <div class="form-outline ">
+                    <i class="fas fa-user trailing"></i>
+                    <input type="text" id="username" class="form-control" name="username" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" />
+                    <label class="form-label" for="username">Username</label>
+                </div>
+                <br>
+                <div class="form-outline">
+                    <i class="fas fa-lock trailing"></i>
+                    <input type="password" id="password" class="form-control" name="password" minlength="5"
+                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" />
+                    <label class="form-label" for="password">Password</label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary btn-lg btn-rounded reg-log-button">Login! <i
+                        class="fas fa-sign-in-alt"></i></button>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <a href="{{ url_for('register') }}" class="not-reg-link">Not Registered?</a>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 {% endblock %}
