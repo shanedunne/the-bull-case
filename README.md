@@ -22,6 +22,7 @@ The Bull Case aims to provide a place for blockchain enthusiasts to research, ke
 - [Resources](#resources)
 - [Code Validation Tools](#code-validation-tools)
 - [Testing](#testing)
+- [Issues and Solutions](#issues-and-solutions)
 - [Deployment](#deployment)
 - [Credits](#credits)
   - [Media](#media)
@@ -102,6 +103,8 @@ The base colours
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Python framework for building web applications
 - [Jinja2](https://jinja.palletsprojects.com/en/3.0.x/) - Templating engine to compliment Flask & Python
 - [MongoDB](https://www.mongodb.com/) - NoSQL database program, using JSON-like documents.
+- [ImageKit](https://imagekit.io/) - Used to host images for display on site
+- - ImageKit enables automatic optimisation and real time transformation to resize images depending on the screen size in use
 
 ### Workspace and Related Tools
 - [Gitpod](https://www.gitpod.io/) - Integrated Development Environment used to write the code
@@ -125,6 +128,24 @@ The base colours
 
 ## Testing
 Testing documentation for this project can be found [HERE](static/docs/TESTING.md)
+
+## Issues and Solutions
+- For writing articles, a typical HTML textarea could not generate a complex string to recognise paragraphs etc. My solution to this was to embed the TinyMCE Text Editor
+- When the article body information is sent from MongoDB to display on the article page, it contained all of the tags and was not properly structured. This is due to Jinja automatic escaping. Using the safe filter marked the variable as safe and mitigated the issue
+```html
+                                  <div class="row d-flex justify-content-center">
+                                    <div class="col-md-10">
+                                      <div class="article-body">{{ article.article_body | safe }}</div>
+                                    </div>
+                                  </div>
+```
+- Since TinyMCE hides the textarea and replaces it with the editor, i could not use the 'value' attribute to populate the textarea when editing. My solution was to use JavaScript to essentially catch the article body text and insert it into the text editor
+```js
+                                  var body = document.getElementById("edit_article_body").getAttribute("value");
+                                  var stringBody = body.toString(); 
+                                  document.getElementById("edit_article_body").innerHTML = stringBody;
+```
+- 
 
 
 

@@ -33,4 +33,3 @@ tinymce.init({
   content_css: 'static/css/textarea.css',
   menubar: ''
 });
-

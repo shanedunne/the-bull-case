@@ -24,6 +24,7 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 **Home Page**
 - Checked call to action routes to register page if not signed in or to the Create Article page when logged in
 - Checked Read button on feature articles correctly opens article
+- Checked footer link to Crypto Penguin is working and opens in a seperate tab
 
 **Register**
 - Checked Already Registered link directs to the login page
@@ -37,6 +38,7 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 - Checked that all tabs on articles page route to correct article topic group
 - Checked Read button on article cards correctly redirects to the article chosen
 - Checked the Post Article button directs to the correct page
+- Check Register Now button that appears if user not logged in leads to register page
 
 **Post Article**
 - Checked the user is redirected to their profile after posting an article
@@ -70,8 +72,11 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 - Checked profile titled as usernames profile
 - Checked Create First Article button shows if user has no articles
 - - Checked this button routes to Post Article page
-- Checked Edit fucntionality works and updates article on database
+- Checked Edit button routes to Edit page
 - Checked Delete fucntionality works and removes article from database
+
+### Edit Article
+- Checked article fields are populated and changes made are updated when update article is clicked
 
 ### Home
 - Checked that the call of action is set to register if user not logged in and Post Article if user already logged in
@@ -79,7 +84,23 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 
 ### Articles
 - Checked the correct articles are sorting by topic on each tab
-- Checked
+
+### Post Article
+- Checked post article functionality is working
+
+### Article
+- Checked article displaying correctly with relevant data
+- Checked comment functionality is working correctly
+- - Checked only user can delete comment they made
+
+### 404 Page
+- Checked route is working as intended and 404 page is displayed if invalid link entered
+- Checked Return to Home button reirects to the home page
+
+### 500 Page
+Checked route works as intended and displays if internal server error is encountered
+
+
 
 
 
