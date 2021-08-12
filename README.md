@@ -2,22 +2,23 @@
 ![Project Across Devices](static/img/mockup.png)
 
 The Bull Case aims to provide a place for blockchain enthusiasts to research, keep up to date and share their own thoughts on everything Crypto!
+You can find a live link to the app [HERE](https://the-bull-case.herokuapp.com/)
 
 ## Table of Contents:
 
 - [UX](#ux)
   - [User Stories](#user-stories)
-  - [Strategy](#1-strategy)
-  - [Scope](#2-scope)
-  - [Structure](#3-structure)
-  - [Skeleton](#4-skeleton)
-  - [Surface](#5-surface)
+  - [Strategy](#strategy)
+  - [Scope](#scope)
+  - [Structure](#structure)
+  - [Skeleton](#skeleton)
+  - [Surface](#surface)
 - [Features](#features)
-  - [Existing Features](#existing-features)
+  - [Deployed Features](#deployed-features)
   - [Features to consider implementing in the future](#features-to-consider-implementing-in-the-future)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
-  - [Frameworks/Tools](#Frameworks/Tools)
+  - [Frameworks and Tools](#frameworks-and-tools)
   - [Workspace and Related Tools](#workspace-and-related-tools)
 - [Resources](#resources)
 - [Code Validation Tools](#code-validation-tools)
@@ -25,9 +26,6 @@ The Bull Case aims to provide a place for blockchain enthusiasts to research, ke
 - [Issues and Solutions](#issues-and-solutions)
 - [Existing Bugs](#existing-bugs)
 - [Deployment](#deployment)
-- [Credits](#credits)
-  - [Media](#media)
-  - [Code](#code)
 - [Acknowledgments](#acknowledgments)
 
 ## UX
@@ -90,7 +88,7 @@ I used the proxima-nova font with 300 weighting and sans-serif as backup
 - The ability to travel to an authors profile to read more of their articles
 - Coin metrics integration through an API
 
-## Technologies
+## Technologies Used
 
 ### Languages
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
@@ -98,7 +96,7 @@ I used the proxima-nova font with 300 weighting and sans-serif as backup
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
 
-### Frameworks/Tools
+### Frameworks and Tools
 
 - [FontAwesome](https://fontawesome.com/) - Used for icons
 - [MDBootstrap](https://mdbootstrap.com/) - CSS framework
