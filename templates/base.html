@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Cryptocurrency news site with info on fundamental, technical, development
+        and new projects">
     <script src="https://cdn.tiny.cloud/1/yhghn4p3nhvbvg5lpl8vlcb43t4p5pqlf09w70rgq06n7111/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
@@ -85,22 +87,22 @@
             {% endblock %}
         </main>
     </div>
-        <footer>
-            <hr>
-            <div id="footer">
-                <p>For crypto metrics check out <a href="https://shanedunne.github.io/MS2_Crypto_Penguin/"
-                        target="_blank"> Crypto Penguin <img src="{{ url_for('static', filename='img/cp-icon.png') }}"
-                            class="footer-logo" alt="Crypto Penguin logo"></a></p>
-            </div>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js">
-        </script>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        {% block scripts %}
-        {% endblock %}
-    
+    <footer>
+        <hr>
+        <div id="footer">
+            <p>For crypto metrics check out <a href="https://shanedunne.github.io/MS2_Crypto_Penguin/" target="_blank"
+                    rel="noopener"> Crypto Penguin <img src="https://ik.imagekit.io/sizql0avpyf/tr:w-28,h-28/CP-ICON-BC__LT87sV21.png?updatedAt=1628768103326"
+                        class="footer-logo" alt="Crypto Penguin logo"></a></p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" preconnect>
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}
+    {% endblock %}
+
 </body>
 
 </html>

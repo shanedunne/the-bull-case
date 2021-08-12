@@ -74,7 +74,8 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome, {}".format(request.form.get(
+                        "username")), 'flash')
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # invalid password match
@@ -235,6 +236,10 @@ def delete_comment(comment_id, article_id):
 def page_not_found(error):
     return render_template('404.html', error=error),404
 
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template('500.html', error=error),500
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

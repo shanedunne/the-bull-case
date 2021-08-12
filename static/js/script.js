@@ -10,11 +10,8 @@ tinymce.init({
 });
 
 // Tiny MCE Editor - Edit Article
-/*var body = $('#edit_article_body').val();
-$('#edit_article_body').html(body);
-console.log(body)
-*/
 
+// Catches article body from DB and places in editor for editing
 var body = document.getElementById("edit_article_body").getAttribute("value");
 var stringBody = body.toString(); 
 document.getElementById("edit_article_body").innerHTML = stringBody;
@@ -37,13 +34,3 @@ tinymce.init({
   menubar: ''
 });
 
-// Dynamic Footer Height
-x = $('#div-that-increase-height').height() + 20; // +20 gives space between div and footer
-y = $(window).height();
-if (x + 100 <= y) { // 100 is the height of your footer
-  $('#footer').css('top', y - 100 + 'px'); // again 100 is the height of your footer
-  $('#footer').css('display', 'block');
-} else {
-  $('#footer').css('top', x + 'px');
-  $('#footer').css('display', 'block');
-}

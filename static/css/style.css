@@ -4,7 +4,7 @@ body {
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 300;
-    height: 100%;
+    height: 100vh;
     margin: 0;
 }
 
@@ -19,6 +19,7 @@ body {
 
 .bg-image {
     width: 100%;
+    height: auto;
 }
 
 @media (max-width: 575.98px) { 
@@ -42,7 +43,7 @@ body {
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:focus,
 .navbar-light .navbar-brand:hover {
-    color: #003049;
+    color: #575757;
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -52,7 +53,7 @@ body {
 /* Nav Link Styling */
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show>.nav-link {
-    color: #003049;
+    color: #575757;
     font-family: proxima-nova, sans-serif;
     font-size: 1.2em;
 }
@@ -118,7 +119,8 @@ input {
 }
 
 .article-image {
-    width: 100%
+    width: 100%;
+    height: auto;
 }
 
 .article-data {
@@ -170,6 +172,14 @@ input {
     margin-right: auto;
     padding-top: 12px;
 }
+
+@media (max-width: 575.98px) { 
+    .article-image-card {
+        height: auto;
+    }
+ }
+
+
 
 .article-date-card {
     float: right;
@@ -408,6 +418,19 @@ footer a:focus {
     }
  }
 
+/*--- 404 & 500 ---*/
+
 .page-not-found-card {
+    height: 250px;
     text-align: center;
 }
+.vertical-center-PNF {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+/* ---- Flash Messages ----*/
