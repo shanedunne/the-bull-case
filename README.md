@@ -72,7 +72,9 @@ The structure and layout of pages is very similar across the board and allows fo
 ### Surface
 The intention for the design was to keep everything simple and not take away from the content
 #### Colours
-The base colours 
+The base colour was kept as white #fafafa with #545454 used for most fonts. There is some colour added on buttons but generally the main colour on the site comes from the images throughout which are supposed to represent blockchain related tech and imagery
+#### Fonts
+I used the proxima-nova font with 300 weighting and sans-serif as backup
 
 ## Features
 ### Deployed Features
@@ -162,3 +164,6 @@ This project is hosted on Heroku. I deployed the flask app to Heroku on my first
 - Next I connected my GitHub repository for the project under 'Deployment Method'.
 - Finally, I selected the main branch and clicked 'Deploy Branch', ensuring Automatic Deployments were enables
 
+# Acknowledgments
+- A big thanks to my great mentor Excellence Ilesanmi for helping and guiding me along the way
+- Thanks to the Code Institute whos tuition has brought my skills to a level to be able to achieve this. The tutor support have been very helpful and patient
