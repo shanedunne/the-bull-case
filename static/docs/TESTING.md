@@ -108,7 +108,11 @@ Prior to submission, I deployed the site to GitHub Pages in order to be able to 
 
 ## Performance
 I tested the performance of the app with Lighthouse. Displayed below are results for both mobile and desktop of the 'Articles' page
-![Mobile](static/img/lighthouse-mobile-articles.png)
+#### Mobile Report of Articles Page
+- ![Mobile](../img/lighthouse-mobile-articles.png)
+
+#### Desktop Report of Articles Page
+- ![Mobile](../img/lighthouse-desktop-articles.png)
 
 
 

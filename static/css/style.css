@@ -1,6 +1,6 @@
 body {
     background-color: #fafafa;
-    color: #575757;
+    color: #545454;
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -46,7 +46,7 @@ body {
 .navbar-light .navbar-brand,
 .navbar-light .navbar-brand:focus,
 .navbar-light .navbar-brand:hover {
-    color: #575757;
+    color: #545454;
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -56,7 +56,7 @@ body {
 /* Nav Link Styling */
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show>.nav-link {
-    color: #575757;
+    color: #545454;
     font-family: proxima-nova, sans-serif;
     font-size: 1.2em;
 }
@@ -64,7 +64,7 @@ body {
 /* Form */
 .card {
     background-color: #fff;
-    color: #575757;
+    color: #545454;
     font-family: proxima-nova, sans-serif;
     font-style: normal;
     font-weight: 300;
@@ -87,12 +87,12 @@ body {
 
 .reg-log-button {
     margin: auto;
-    background-color: #f78000;
+    background-color: #003049;
     transition: 0.3s;
 }
 
 .reg-log-button:hover {
-    background-color: #f78000e7;
+    background-color: #002f49de;
 }
 
 input {
@@ -102,7 +102,7 @@ input {
 
 
 .not-reg-link {
-    color: #575757;
+    color: #545454;
     text-decoration: underline;
 }
 
@@ -207,7 +207,7 @@ input {
 
 .create-article,
 .home-call-button {
-    background-color: #f78000;
+    background-color: #003049;
     color: #fcfcfc;
     padding: 14px 25px;
     text-align: center;
@@ -221,7 +221,7 @@ input {
 .create-article:active,
 .home-call-button:hover,
 .home-call-button:active {
-    background-color: #f78000e7;
+    background-color: #002f49de;
     color: #fcfcfc;
 }
 
@@ -252,7 +252,7 @@ h6
 /*-----Profile-----*/
 
 .profile-create-article {
-    background-color: #f78000;
+    background-color: #003049;
     color: #fcfcfc;
     padding: 14px 25px;
     text-align: center;
@@ -265,14 +265,14 @@ h6
 
 .profile-create-article:hover,
 .profile-create-article:active {
-    background-color: #f78000e7;
+    background-color: #002f49de;
     color: #fcfcfc;
 }
 
 
 .delete-button {
     margin: auto;
-    background-color: #D62828;
+    background-color: #A41E1E;
     color: #fcfcfc;
     transition: 0.3s;
 
@@ -280,32 +280,32 @@ h6
 
 .delete-button:hover,
 .delete-button:focus {
-    background-color: #d62828ce;
+    background-color: #A41E1E;
     color: #fafafa;
 }
 
 .edit-button {
     margin: auto;
-    background-color: #f78000;
+    background-color: #065C00;
     color: #fcfcfc;
     transition: 0.3s;
 }
 
 .edit-button:hover {
-    background-color: #f78000e7;
+    background-color: #0e6808;
     color: #fafafa;
 }
 
 .cancel-edit {
     margin: auto;
-    background-color: #D62828;
+    background-color: #A41E1E;
     color: #fcfcfc;
     transition: 0.3s;
 
 }
 
 .cancel-edit:hover {
-    background-color: #d62828ce;
+    background-color: #A41E1E;
     color: #fafafa;
 }
 
@@ -320,25 +320,25 @@ h6
 
 
 .yes-delete-button {
-    background-color: #D62828;
+    background-color: #A41E1E;
     color: #fcfcfc;
     transition: 0.3s;
 
 }
 
 .yes-delete-button:hover {
-    background-color: #d62828ce;
+    background-color: #A41E1E;
     color: #fafafa;
 }
 
 .no-thanks-button {
     background-color: #fcfcfc;
-    color: #575757;
+    color: #545454;
     transition: 0.3s;
 }
 
 .no-thanks-button:hover {
-    background-color: #f78000;
+    background-color: #002f49de;
 }
 
 /*-----Comments-----*/
@@ -357,7 +357,7 @@ h6
 }
 
 .post-comment-button {
-    background-color: #f78000;
+    background-color: #003049;
     color: #fcfcfc;
     padding: 14px 25px;
     text-align: center;
@@ -369,7 +369,7 @@ h6
 }
 
 .post-comment-button:hover {
-    background-color: #f78000e7;
+    background-color: #002f49de;
 }
 
 @media (max-width: 767.98px) {
@@ -387,14 +387,14 @@ h6
 
 .delete-comment {
     text-decoration: none;
-    color: #575757;
+    color: #545454;
     font-size: 15px;
     font-weight: 500;
 }
 
 .delete-comment:hover {
     text-decoration: underline;
-    color: #D62828;
+    color: #A41E1E;
 }
 
 /*--- Footer ---*/
@@ -415,12 +415,12 @@ footer {
 }
 
 footer a {
-    color: #575757;
+    color: #545454;
 }
 
 footer a:hover,
 footer a:focus {
-    color: #f78000;
+    color: #002f49de;
     text-decoration: underline;
 }
 

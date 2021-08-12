@@ -1,5 +1,5 @@
 # The Bull Case
-![Project Across Devices](#)
+![Project Across Devices](static/img/mockup.png)
 
 The Bull Case aims to provide a place for blockchain enthusiasts to research, keep up to date and share their own thoughts on everything Crypto!
 
@@ -66,8 +66,8 @@ The structure and layout of pages is very similar across the board and allows fo
 - - Profile - Contains all articles contributed by user with buttons to read, edit and delete articles. Delete articles propmts a modal to make sure the user wants to delete
 - - Edit - Allows user to edit article with pre-populated fields containing original article
 -
-- Database Diagram
-![Project Across Devices](static/docs/dbd)
+#### Database Diagram
+![Project Across Devices](static/docs/database-diagram.png)
 
 ### Surface
 The intention for the design was to keep everything simple and not take away from the content
@@ -148,9 +148,9 @@ Testing documentation for this project can be found [HERE](static/docs/TESTING.m
 ## Existing Bugs
 - Since TinyMCE hides the textarea and replaces it with the editor, i could not populate the textarea when editing. My solution was to use JavaScript to essentially catch the article body text and insert it into the text editor. This however, isn't a best practice as a textarea should not have a value attribute. This issue renders an error on the W3 HTML Validator. As of now it is the best solution for the issue and i continue to seek a better alternative
 ```js
-                                  var body = document.getElementById("edit_article_body").getAttribute("value");
-                                  var stringBody = body.toString(); 
-                                  document.getElementById("edit_article_body").innerHTML = stringBody;
+                        var body = document.getElementById("edit_article_body").getAttribute("value");
+                        var stringBody = body.toString(); 
+                        document.getElementById("edit_article_body").innerHTML = stringBody;
 ```
 ## Deployment
 This project is hosted on Heroku. I deployed the flask app to Heroku on my first day working on it in order to be able to test out deployed features as i coded
