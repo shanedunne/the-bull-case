@@ -85,6 +85,12 @@ body {
     margin: auto;
 }
 
+@media (max-width: 575.98px) { 
+    .form-outline {
+        width: 85%;
+    }
+ }
+
 .reg-log-button {
     margin: auto;
     background-color: #003049;
@@ -98,8 +104,6 @@ body {
 input {
     background-color: #fafafa;
 }
-
-
 
 .not-reg-link {
     color: #545454;
