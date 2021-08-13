@@ -101,10 +101,48 @@ User 5: I have developed a new cryptocurrency project and would like a place to 
 Checked route works as intended and displays if internal server error is encountered
 
 ## Code Validation
-- [WC3 HTML Validator](https://validator.w3.org/) - One issue related to the Edit Article page. Reasoning explained in Issues and Solutions section of Readme
+- [WC3 HTML Validator](https://validator.w3.org/) - One issue related to the Edit Article page. Reasoning explained below in [Existing Bugs](#existing-bugs)
 - [WC3 CSS Validator](https://jigsaw.w3.org/css-validator/) - Passed
 - [JS Hint](https://jshint.com/) - Passed
 - [PEP8 online](http://pep8online.com/) - Passed
+
+## Issues and Solutions
+- For writing articles, a typical HTML textarea could not generate a complex string to recognise paragraphs etc. My solution to this was to embed the TinyMCE Text Editor
+- When the article body information is sent from MongoDB to display on the article page, it contained all of the tags and was not properly structured. This is due to Jinja automatic escaping. Using the safe filter marked the variable as safe and mitigated the issue
+```html
+                                  <div class="row d-flex justify-content-center">
+                                    <div class="col-md-10">
+                                      <div class="article-body">{{ article.article_body | safe }}</div>
+                                    </div>
+                                  </div>
+```
+- Again, due to the textarea being hiden and replaced by TinyMCE I had to create a work around to ensure the article was not submitted nor submitted after editing with an empty body. The solution was to include the below snippet in both post_article and edit_article python functions
+```py
+                        if request.form.get("article_body") == "":
+                            flash("Please fill in article body")
+                        else:
+                            article = {
+                                "article_title": request.form.get("article_title"),
+                                "article_topic": request.form.get("article_topic"),
+                                "article_coin": request.form.get("article_coin"),
+                                "article_body": request.form.get("article_body"),
+                                "article_author": session["user"],
+                                "article_published_datetime": datetime.now().strftime("%c"),
+                                "article_date": datetime.now().strftime("%x")
+                            }
+                            mongo.db.articles.insert_one(article)
+                            username = mongo.db.users.find_one(
+                                {"username": session["user"]})["username"]
+                            flash("Article posted")
+                            return redirect(url_for("profile", username=username))
+```
+## Existing Bugs
+- Since TinyMCE hides the textarea and replaces it with the editor, i could not populate the textarea when editing. My solution was to use JavaScript to essentially catch the article body text and insert it into the text editor. This however, isn't a best practice as a textarea should not have a value attribute. This issue renders an error on the W3 HTML Validator. As of now it is the best solution for the issue and i continue to seek a better alternative
+```js
+                        var body = document.getElementById("edit_article_body").getAttribute("value");
+                        var stringBody = body.toString(); 
+                        document.getElementById("edit_article_body").innerHTML = stringBody;
+```
 
 ## Responsiveness
 Responsiveness was checked using [Responsinator](https://www.responsinator.com/) while also designed with responsiveness in mind with regular testing on Dev Tools. The responsiveness has been tested across multiple devices such as iPhone 8, iPhone 8 Plus, iPhone X, Samusing Galaxy X5, iPad etc.

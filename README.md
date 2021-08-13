@@ -23,8 +23,6 @@ You can find a live link to the app [HERE](https://the-bull-case.herokuapp.com/)
 - [Resources](#resources)
 - [Code Validation Tools](#code-validation-tools)
 - [Testing](#testing)
-- [Issues and Solutions](#issues-and-solutions)
-- [Existing Bugs](#existing-bugs)
 - [Deployment](#deployment)
 - [Acknowledgments](#acknowledgments)
 
@@ -130,28 +128,6 @@ I used the proxima-nova font with 300 weighting and sans-serif as backup
 ## Testing
 Testing documentation for this project can be found [HERE](static/docs/TESTING.md)
 
-## Issues and Solutions
-- For writing articles, a typical HTML textarea could not generate a complex string to recognise paragraphs etc. My solution to this was to embed the TinyMCE Text Editor
-- When the article body information is sent from MongoDB to display on the article page, it contained all of the tags and was not properly structured. This is due to Jinja automatic escaping. Using the safe filter marked the variable as safe and mitigated the issue
-```html
-                                  <div class="row d-flex justify-content-center">
-                                    <div class="col-md-10">
-                                      <div class="article-body">{{ article.article_body | safe }}</div>
-                                    </div>
-                                  </div>
-```
-- Again, due to the textarea being hiden and replaced by TinyMCE I had to create a work around to ensure the article was not submitted nor submitted after editing with an empty body. The solution was to include the below snippet in both post_article and edit_article python functions
-```py
-                                  if request.form.get("article_body") == "":
-                                      flash("Please fill in article body")
-```
-## Existing Bugs
-- Since TinyMCE hides the textarea and replaces it with the editor, i could not populate the textarea when editing. My solution was to use JavaScript to essentially catch the article body text and insert it into the text editor. This however, isn't a best practice as a textarea should not have a value attribute. This issue renders an error on the W3 HTML Validator. As of now it is the best solution for the issue and i continue to seek a better alternative
-```js
-                        var body = document.getElementById("edit_article_body").getAttribute("value");
-                        var stringBody = body.toString(); 
-                        document.getElementById("edit_article_body").innerHTML = stringBody;
-```
 ## Deployment
 This project is hosted on Heroku. I deployed the flask app to Heroku on my first day working on it in order to be able to test out deployed features as i coded
 
