@@ -447,3 +447,14 @@ footer a:focus {
 
 
 /* ---- Flash Messages ----*/
+.flashes {
+    width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+@media (min-width: 768px) { 
+    .flashes {
+        width: 500px;
+    }
+ }

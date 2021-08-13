@@ -16,8 +16,8 @@
                     <br>
                     <div class="form-outline">
                         <i class="fas fa-sort-down trailing"></i>
-                        <select id="article_topic" name="article_topic" class="form-control article-form">
-                            <option value="" disabled selected>Choose Topic</option>
+                        <select id="article_topic" name="article_topic" class="form-control article-form" required>
+                            <option value="">Choose Topic</option>
                             {% for topic in topics %}
                                 <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
                             {% endfor %}
